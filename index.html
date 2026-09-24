@@ -1,0 +1,1545 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Imperativ — Stellas</title>
+<meta name="description" content="Повелительное наклонение в немецком. Коротко, на историях, с анимацией. От Stellas Deutsch.">
+<meta name="theme-color" content="#E8327C">
+<meta property="og:title" content="Imperativ. Как просить по-немецки и не звучать как прапорщик">
+<meta property="og:description" content="Повелительное наклонение за 15 минут. На историях.">
+<meta property="og:image" content="media/p1-home.jpg">
+<link rel="icon" href="media/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marck+Script&family=Montserrat:wght@300;400;500;600;700;800&family=Oswald:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --pk:#E8327C; --pk2:#F4679F; --pkd:#CF1C66; --pkl:#FFE3EE;
+  --peach:#FDF1EB; --peach2:#FBE5DB; --peach3:#F9DCCF;
+  --salmon:#F8C6AE; --salmon-t:#6B4337;
+  --ink:#1D1C1E; --grey:#8F8784; --grey2:#BDAEA7; --taupe:#7D6C64;
+  --r:32px;
+  --grad:linear-gradient(135deg,#F2649D 0%,#E8327C 55%,#D81F6A 100%);
+  --btn:linear-gradient(180deg,#F98AB6 0%,#EE4A8C 100%);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:#fff;color:var(--ink);font-family:Montserrat,system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden;line-height:1.45}
+img,video{max-width:100%;display:block}
+button{font:inherit;color:inherit}
+a{color:inherit}
+.wrap{width:100%;max-width:1180px;margin:0 auto;padding:0 12px}
+section{position:relative;margin:12px 0;scroll-margin-top:72px}
+
+/* ---------- typography ---------- */
+.h{font-family:Oswald,Impact,sans-serif;font-weight:700;text-transform:uppercase;line-height:.93;letter-spacing:-.01em;margin:0;font-size:clamp(42px,12.4vw,92px)}
+.h2{font-size:clamp(38px,10.6vw,76px)}
+.h .pk,.pk{color:var(--pk)}
+.scr{font-family:'Marck Script',cursive;font-weight:400;text-transform:none;letter-spacing:0}
+.lt{font-weight:300;font-size:clamp(30px,8.4vw,58px);line-height:1.05;letter-spacing:-.02em;margin:0}
+.lt b{font-weight:700}
+.lbl{font-size:10px;letter-spacing:.34em;text-transform:uppercase;color:var(--grey2);font-weight:500}
+.lead{font-weight:300;font-size:clamp(17px,4.6vw,22px);line-height:1.42;margin:14px 0 0}
+.lead b{font-weight:700}
+.sub{color:var(--grey);font-weight:400;font-size:15px;line-height:1.5;margin:10px 0 0}
+p{margin:0}
+
+/* ---------- panels ---------- */
+.panel{position:relative;border-radius:var(--r);background:var(--peach);overflow:hidden;padding:30px 20px}
+.panel.white{background:#fff;box-shadow:0 1px 0 #f5e6df inset}
+.panel.pink{background:var(--grad);color:#fff}
+.panel>*{position:relative;z-index:1}
+.blob{position:absolute!important;z-index:0!important;border-radius:50%;filter:blur(38px);pointer-events:none;background:radial-gradient(circle,#F7A9C6 0%,rgba(247,169,198,0) 70%);opacity:.75}
+.blob.b2{background:radial-gradient(circle,#FFD3C0 0%,rgba(255,211,192,0) 70%)}
+
+/* ---------- buttons ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:60px;padding:0 34px;border-radius:999px;background:var(--btn);color:#fff;font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:13px;text-decoration:none;border:0;cursor:pointer;
+  box-shadow:0 14px 34px -8px rgba(232,50,124,.6),0 0 0 6px rgba(248,160,196,.22),inset 0 1px 0 rgba(255,255,255,.45);transition:transform .2s}
+.btn:active{transform:scale(.97)}
+.btn.glow{animation:glow 2.6s ease-in-out infinite}
+@keyframes glow{50%{box-shadow:0 18px 44px -6px rgba(232,50,124,.75),0 0 0 10px rgba(248,160,196,.18),inset 0 1px 0 rgba(255,255,255,.45)}}
+.btn.w{width:100%}
+.btn.dark{background:#1D1C1E;box-shadow:none}
+.btn.ghost{background:#fff;color:var(--pk);box-shadow:0 0 0 2px var(--pk) inset}
+.pill{display:inline-flex;align-items:center;gap:10px;background:#1D1C1E;color:#fff;border-radius:10px;padding:9px 16px;font-size:12px;font-weight:500}
+.pill::before,.pill::after{content:"";width:6px;height:6px;border-radius:50%;background:#fff}
+.tag{display:inline-flex;align-items:center;gap:8px;background:var(--salmon);color:var(--salmon-t);border-radius:12px;padding:12px 18px;font-size:14px;font-weight:500}
+.say{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;border:0;background:#fff;color:var(--pk);cursor:pointer;box-shadow:0 4px 12px -4px rgba(232,50,124,.45);flex:none;transition:transform .2s}
+.say svg{width:17px;height:17px}
+.say.on{animation:pulse .7s ease-in-out infinite}
+@keyframes pulse{50%{transform:scale(1.15)}}
+.ico{width:40px;height:40px;border-radius:9px;background:var(--grad);display:grid;place-items:center;flex:none;color:#fff;box-shadow:0 6px 14px -6px rgba(232,50,124,.7)}
+.ico svg{width:20px;height:20px}
+
+/* ---------- reveal ---------- */
+.rv{opacity:0;transform:translateY(34px);transition:opacity .8s cubic-bezier(.2,.8,.2,1),transform .8s cubic-bezier(.2,.8,.2,1);transition-delay:calc(var(--d,0) * 90ms)}
+.rv.in{opacity:1;transform:none}
+.rv.zoom{transform:scale(.9)}
+.rv.zoom.in{transform:none}
+
+/* ---------- stars ---------- */
+.star{position:absolute;z-index:0;pointer-events:none;animation:float 7s ease-in-out infinite;filter:drop-shadow(0 6px 8px rgba(214,120,110,.25))}
+@keyframes float{50%{transform:translateY(-14px) rotate(12deg)}}
+
+/* ---------- header ---------- */
+.top{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.86);backdrop-filter:saturate(1.4) blur(14px);-webkit-backdrop-filter:saturate(1.4) blur(14px)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{display:flex;align-items:center;gap:8px;font-weight:800;font-size:17px;text-decoration:none}
+.brand img{width:34px;height:34px}
+.top .pillbtn{background:#1D1C1E;color:#fff;border-radius:999px;padding:10px 18px;font-size:13px;font-weight:600;text-decoration:none}
+.prog{position:absolute;left:0;bottom:0;height:3px;background:var(--grad);width:0;border-radius:0 3px 3px 0}
+
+/* ---------- hero ---------- */
+.hero{padding:26px 20px 34px;background:linear-gradient(180deg,#fff 0%,#FFF6F2 45%,#FDEDE6 100%)}
+.hero .lbl{display:block;text-align:center;margin-bottom:18px}
+.hero-h{font-size:clamp(46px,13.6vw,98px)}
+.hero-h .scr{display:block;color:#C89A8B;font-size:.62em;transform:rotate(-4deg);margin:6px 0 0 4px}
+.hero-grid{display:grid;gap:10px}
+.hero .cta{display:flex;flex-direction:column;gap:12px;margin-top:22px}
+.hero .cta a.link{text-align:center;font-size:14px;color:var(--grey);text-decoration:none}
+.meta{display:grid;grid-template-columns:repeat(3,1fr);text-align:center;margin:0 0 20px;padding:0 0 16px;border-bottom:1px solid #f3e1d9}
+.meta small{display:block;font-size:9px;color:var(--grey2);letter-spacing:.08em}
+.meta b{font-size:13px;font-weight:600}
+
+/* road sign */
+.signpost{position:relative;width:100%;height:370px;margin:10px auto 0;max-width:420px}
+.pole{position:absolute;left:50%;top:40px;bottom:-40px;width:18px;margin-left:-9px;border-radius:4px;background:linear-gradient(90deg,#8d8d92,#e6e6ea 40%,#a3a3a8 60%,#6f6f74)}
+.board{position:absolute;left:50%;display:flex;align-items:center;gap:12px;color:#fff;font-weight:800;border-radius:12px;padding:14px 16px;white-space:nowrap;transform-origin:50% 0;box-shadow:0 20px 30px -14px rgba(0,0,0,.35),inset 0 1px 0 rgba(255,255,255,.35)}
+.board .bt{font-size:clamp(22px,6.4vw,36px);line-height:1}
+.board .km{font-size:12px;font-weight:700;line-height:1.1;text-align:center;opacity:.95;padding-right:10px;border-right:2px solid rgba(255,255,255,.55)}
+.board .ar{font-size:22px}
+.board.b1{top:70px;left:0;background:linear-gradient(180deg,#F2468C,#E02C78);transform:rotate(-5deg);animation:swing1 5s ease-in-out infinite}
+.board.b2{top:182px;left:auto;right:0;background:linear-gradient(180deg,#8A7A72,#6B5C55);transform:rotate(4deg);animation:swing2 5.5s ease-in-out infinite}
+.board.b2 .km{border-right:0;border-left:2px solid rgba(255,255,255,.55);padding:0 0 0 12px}
+@keyframes swing1{50%{transform:rotate(-2deg)}}
+@keyframes swing2{50%{transform:rotate(7deg)}}
+.clampx{position:absolute;left:50%;width:34px;height:14px;margin-left:-17px;border-radius:4px;background:linear-gradient(180deg,#ddd,#888);z-index:3}
+.notif{position:absolute;z-index:4;background:#fff;border-radius:16px;padding:9px 14px 9px 9px;white-space:nowrap;display:flex;gap:10px;align-items:center;box-shadow:0 18px 30px -16px rgba(120,60,50,.4);opacity:0;transform:translateY(16px) scale(.9);animation:npop .7s cubic-bezier(.2,.9,.3,1.3) forwards, float 6s ease-in-out infinite;max-width:230px}
+.notif .av{width:34px;height:34px;border-radius:9px;display:grid;place-items:center;font-weight:800;color:#fff;background:var(--grad);flex:none;font-size:14px}
+.notif .av.y{background:#F7C744;color:#3b2c00}
+.notif .av.d{background:#1D1C1E}
+.notif small{display:block;font-size:10px;color:var(--grey);font-weight:500}
+.notif b{display:block;font-size:14px;color:#22a35a;font-weight:700;line-height:1.2}
+.notif b.r{color:var(--pk)}
+@keyframes npop{to{opacity:1;transform:none}}
+.n1{left:0;top:280px;animation-delay:.5s,1.2s}
+.n2{right:0;top:318px;animation-delay:1.1s,1.8s}
+.n3{right:0;top:0;animation-delay:1.7s,2.4s}
+
+/* ---------- story / chat ---------- */
+.story .ln{opacity:0;transform:translateY(12px);transition:.55s cubic-bezier(.2,.8,.2,1);font-size:17px;line-height:1.5;margin:0 0 12px}
+.story .ln.in{opacity:1;transform:none}
+.story .ln.punch{font-weight:700;font-size:19px}
+.bub{position:relative;opacity:0;transform:translateY(12px) scale(.96);transition:.45s cubic-bezier(.2,.8,.2,1.2);background:#fff;border-radius:16px;padding:10px 14px 12px;margin:0 0 12px;max-width:88%;box-shadow:0 14px 26px -18px rgba(120,60,50,.5)}
+.bub.me{margin-left:auto;background:#FFE6EF}
+.bub.in,.bub.typing{opacity:1;transform:none}
+.bub small{display:flex;justify-content:space-between;gap:16px;font-size:11px;color:var(--pk);font-weight:600}
+.bub small i{font-style:normal;color:var(--grey2);font-weight:400}
+.bub .tx{display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:17px;font-weight:600;margin-top:2px}
+.bub .tr{display:block;font-size:12px;color:var(--grey);font-weight:400}
+.bub.typing .tx,.bub.typing .tr{display:none}
+.bub.typing::after{content:"";display:block;width:44px;height:14px;margin-top:6px;background:radial-gradient(circle,#d4c2bb 45%,transparent 50%) 0 50%/14px 14px repeat-x;animation:typing .6s steps(3) infinite}
+@keyframes typing{from{clip-path:inset(0 66% 0 0)}to{clip-path:inset(0 0 0 0)}}
+.part{position:absolute!important;right:18px;top:18px;font-size:11px;color:var(--grey2);font-weight:500}
+
+/* split panels (Главная задача / Несколько слов) */
+.split{display:grid;gap:12px}
+.task h3{font-weight:300;font-size:clamp(40px,11vw,64px);line-height:1;margin:0 0 20px}
+.task h3 .scr{display:block;font-size:1.05em;margin-top:-4px}
+.task li{display:flex;gap:14px;align-items:flex-start;font-size:clamp(19px,5.2vw,26px);font-weight:300;line-height:1.25;margin:0 0 18px}
+.task li .ico{background:#fff;color:var(--pk);width:34px;height:34px}
+.task ul{list-style:none;padding:0;margin:0}
+.task .note{background:#fff;color:var(--ink);border-radius:22px;padding:22px 20px;margin-top:10px}
+.task .note p{font-size:18px;line-height:1.35;color:var(--pk)}
+.task .note p b{font-weight:700}
+
+/* ---------- faces ---------- */
+.faces{display:grid;gap:14px;margin-top:22px}
+.face{background:#fff;border-radius:26px;padding:22px 18px;text-align:center;box-shadow:0 20px 40px -30px rgba(160,70,60,.45)}
+.face .who{font-family:Oswald;font-weight:700;font-size:54px;line-height:1;color:var(--pk)}
+.face .tt{font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--pk);margin-top:6px}
+.face .for{font-size:14px;color:var(--grey);margin:10px 0 14px;font-style:italic}
+.face .f{display:inline-block;background:var(--peach);border-radius:10px;padding:6px 12px;font-size:13px;font-weight:600;margin-bottom:12px}
+.ex{display:flex;align-items:center;justify-content:space-between;gap:10px;background:var(--pkl);border-radius:14px;padding:10px 10px 10px 16px;margin-top:8px;text-align:left}
+.ex b{font-size:17px}
+.ex span{display:block;font-size:12px;color:var(--grey)}
+.face:nth-child(2) .ex{background:#FFF0DF}
+.face:nth-child(2) .who,.face:nth-child(2) .tt{color:#E07A3E}
+.face:nth-child(3) .ex{background:#EEE9FF}
+.face:nth-child(3) .who,.face:nth-child(3) .tt{color:#6D55D9}
+.wir{display:flex;gap:14px;align-items:center;background:#fff;border-radius:20px;padding:16px;margin-top:14px}
+
+/* case cards (pink header) */
+.case{border-radius:26px;overflow:hidden;background:#fff;box-shadow:0 20px 40px -30px rgba(160,70,60,.5)}
+.case .hd{background:var(--grad);color:#fff;text-align:center;padding:16px 18px;font-size:15px;line-height:1.3}
+.case .hd b{font-weight:700}
+.case .bd{background:var(--peach);padding:20px 18px}
+.case .res{background:var(--peach2);color:var(--pk);font-weight:700;text-align:center;padding:14px 16px;font-size:15px;margin:10px 12px 12px;border-radius:18px;display:flex;align-items:center;justify-content:center;gap:10px}
+
+/* ---------- machine ---------- */
+.chips{display:flex;gap:8px;overflow-x:auto;padding:4px 2px 10px;margin:18px -20px 0;padding-left:20px;padding-right:20px;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;border:0;background:#fff;border-radius:14px;padding:10px 14px;cursor:pointer;text-align:left;box-shadow:0 0 0 1.5px #f0dcd3 inset;transition:.25s}
+.chip b{display:block;font-size:15px}
+.chip span{font-size:11px;color:var(--grey)}
+.chip.on{background:var(--grad);color:#fff;box-shadow:0 10px 20px -10px rgba(232,50,124,.8)}
+.chip.on span{color:#ffe0ec}
+.seg{display:grid;grid-template-columns:repeat(3,1fr);background:#fff;border-radius:16px;padding:5px;gap:4px;margin-top:6px;box-shadow:0 0 0 1.5px #f0dcd3 inset}
+.seg button{border:0;background:none;border-radius:12px;padding:11px 0;font-weight:700;font-size:16px;cursor:pointer;transition:.25s}
+.seg button small{display:block;font-size:10px;font-weight:500;color:var(--grey)}
+.seg button.on{background:#1D1C1E;color:#fff}
+.seg button.on small{color:#bbb}
+.stagebox{margin-top:14px;background:#fff;border-radius:26px;padding:18px 12px 16px;box-shadow:0 30px 50px -36px rgba(160,70,60,.55)}
+.stage{position:relative;min-height:150px;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;align-content:center;padding:8px 0}
+.stage.done{animation:stamp .5s ease}
+@keyframes stamp{40%{transform:scale(1.04)}}
+.tk{display:inline-flex;align-items:center;font-weight:800;font-size:clamp(26px,7.6vw,42px);line-height:1;padding:.32em .5em;margin:5px 4px;border-radius:14px;background:#F6F2F0;white-space:nowrap;transition:background .35s,color .35s,box-shadow .35s}
+.tk.p{background:#EEE8E5;color:#9a8f8a;font-weight:600}
+.tk.s{background:#fff;box-shadow:0 0 0 2px #1D1C1E inset}
+.tk.e{background:var(--pkl);color:var(--pk);box-shadow:0 0 0 2px var(--pk) inset;border-style:dashed}
+.tk.o{background:var(--salmon);color:var(--salmon-t);font-weight:700;font-size:clamp(20px,5.6vw,32px)}
+.tk.r{background:#1D1C1E;color:#fff}
+.tk.m{background:none;color:var(--pk);padding-left:0;padding-right:0;margin-left:-2px}
+.tk.hl{background:var(--grad);color:#fff;box-shadow:0 10px 20px -10px rgba(232,50,124,.8)}
+.tk.r.hl{background:#1D1C1E;color:#fff;box-shadow:0 0 0 3px var(--pk)}
+.tk.x{background:#FFE7E7;color:#D93A3A;text-decoration:line-through;text-decoration-thickness:3px;box-shadow:0 0 0 2px #F3B1B1 inset;animation:shake .45s}
+.tk.gl{border-top-right-radius:0;border-bottom-right-radius:0;margin-right:0}
+.tk.gr{border-top-left-radius:0;border-bottom-left-radius:0;margin-left:0}
+.tk.pop{animation:popin .55s cubic-bezier(.2,.9,.3,1.4)}
+.tk.morph{animation:morph .5s ease}
+.tk.gone{pointer-events:none;animation:gone .55s ease forwards}
+@keyframes shake{20%{transform:translateX(-6px) rotate(-2deg)}40%{transform:translateX(6px) rotate(2deg)}60%{transform:translateX(-4px)}80%{transform:translateX(3px)}}
+@keyframes popin{from{opacity:0;transform:scale(.3) translateY(20px)}}
+@keyframes morph{40%{transform:scaleY(.2);opacity:.3}}
+@keyframes gone{to{opacity:0;transform:translateY(-46px) rotate(-12deg) scale(.7)}}
+.dotfx{position:absolute;font-size:44px;font-weight:800;color:var(--pk);line-height:1;pointer-events:none;animation:dotfall 1.1s cubic-bezier(.5,0,.7,1) forwards}
+@keyframes dotfall{to{transform:translateY(110px) rotate(80deg);opacity:0}}
+.mcap{min-height:66px;display:flex;gap:12px;align-items:flex-start;margin-top:10px;padding:14px 14px;background:var(--peach);border-radius:18px;font-size:15px;line-height:1.4}
+.mcap .n{flex:none;font-family:Oswald;font-weight:700;color:var(--pk);font-size:13px;text-transform:uppercase;letter-spacing:.04em;padding-top:1px}
+.mcap b{color:var(--pk)}
+.steps{display:flex;gap:6px;justify-content:center;margin-top:12px}
+.steps i{width:8px;height:8px;border-radius:8px;background:#EBD9D1;transition:.3s}
+.steps i.on{width:26px;background:var(--pk)}
+.mbtns{display:grid;grid-template-columns:1fr 1fr auto;gap:8px;margin-top:14px}
+.mbtns .btn{min-height:52px;padding:0 12px;font-size:12px;letter-spacing:.06em;white-space:nowrap}
+.mbtns .btn.on{animation:glow 1.2s infinite}
+
+/* ---------- traps ---------- */
+.traps{display:grid;gap:14px;margin-top:24px}
+.demo{display:flex;align-items:center;justify-content:center;height:110px;font-weight:800;font-size:54px;letter-spacing:-.01em;position:relative}
+.demo .w1,.demo .w2{position:absolute}
+.demo .w1{color:#D93A3A}
+.demo .w1::after{content:"";position:absolute;left:-4px;right:-4px;top:52%;height:5px;border-radius:5px;background:#D93A3A;transform:scaleX(0);transform-origin:left}
+.demo .w2{color:var(--pk);opacity:0}
+.loop.play .w1{animation:w1 4s infinite}
+.loop.play .w1::after{animation:w1s 4s infinite}
+.loop.play .w2{animation:w2 4s infinite}
+@keyframes w1{0%,35%{opacity:1;transform:none}50%,100%{opacity:0;transform:translateY(-30px) rotate(-8deg)}}
+@keyframes w1s{0%,12%{transform:scaleX(0)}28%,100%{transform:scaleX(1)}}
+@keyframes w2{0%,45%{opacity:0;transform:scale(.4)}58%{opacity:1;transform:scale(1.12)}66%,92%{opacity:1;transform:none}100%{opacity:0}}
+.uml{position:relative;display:inline-block}
+.uml i{position:absolute;top:.02em;width:.13em;height:.13em;border-radius:50%;background:var(--pk)}
+.uml i:first-child{left:.08em}.uml i:last-child{right:.08em}
+.loop.play .uml i{animation:ufall 3.6s infinite}
+.loop.play .uml i:last-child{animation-delay:.12s}
+@keyframes ufall{0%,30%{transform:none;opacity:1}55%{transform:translateY(1.4em) rotate(90deg);opacity:1}65%,90%{transform:translateY(1.6em);opacity:0}100%{transform:none;opacity:0}}
+.ee{display:inline-block;color:var(--pk);max-width:0;overflow:hidden;vertical-align:bottom}
+.loop.play .ee{animation:ee 3.6s infinite}
+@keyframes ee{0%,25%{max-width:0}45%,90%{max-width:1em}100%{max-width:0}}
+.du{display:inline-block;color:#D93A3A;text-decoration:line-through;overflow:hidden;max-width:2.6em;vertical-align:bottom;margin-right:.2em}
+.loop.play .du{animation:du 3.6s infinite}
+@keyframes du{0%,30%{max-width:2.6em;opacity:1;margin-right:.2em}50%,90%{max-width:0;opacity:0;margin-right:0}100%{max-width:2.6em;opacity:1}}
+.seinrow{display:grid;grid-template-columns:1fr 1fr;gap:8px;width:100%}
+.seinrow span{background:#fff;border-radius:14px;text-align:center;padding:10px 4px;font-size:22px;color:var(--pk);opacity:0;transform:rotateX(90deg)}
+.loop.play .seinrow span{animation:flipin 4s infinite}
+.seinrow span:nth-child(2){animation-delay:.25s!important}.seinrow span:nth-child(3){animation-delay:.5s!important}.seinrow span:nth-child(4){animation-delay:.75s!important}
+@keyframes flipin{0%{opacity:0;transform:rotateX(90deg)}12%,85%{opacity:1;transform:none}100%{opacity:0}}
+.exs{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.exs button{border:0;background:#fff;border-radius:12px;padding:8px 12px;font-weight:700;font-size:15px;cursor:pointer;display:inline-flex;gap:8px;align-items:center;box-shadow:0 0 0 1.5px #f0dcd3 inset}
+.exs button small{font-weight:400;color:var(--grey);font-size:12px}
+.exs button svg{width:14px;height:14px;color:var(--pk)}
+.gline{margin-top:14px;font-size:15px;font-style:italic;color:var(--taupe)}
+
+/* ---------- politeness ---------- */
+.pol{margin-top:22px;background:#fff;border-radius:26px;padding:22px 18px;box-shadow:0 30px 50px -36px rgba(160,70,60,.55)}
+.pol .who{display:inline-block;background:#1D1C1E;color:#fff;border-radius:10px;padding:6px 12px;font-size:12px;font-weight:600;letter-spacing:.04em}
+.pol .phr{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:110px;font-size:clamp(24px,6.6vw,36px);font-weight:800;line-height:1.15;margin:14px 0 6px}
+.pol .phr span{transition:opacity .25s,transform .25s}
+.pol .phr span.sw{opacity:0;transform:translateY(8px)}
+.pol .nt{font-size:15px;color:var(--grey);min-height:46px}
+.meter{height:12px;border-radius:12px;background:#F3E6E0;overflow:hidden;margin:18px 0 6px}
+.meter i{display:block;height:100%;border-radius:12px;background:linear-gradient(90deg,#1D1C1E,#8A5A6E 40%,#F2649D);transition:width .5s cubic-bezier(.2,.8,.2,1)}
+.ticks{display:flex;justify-content:space-between;font-size:11px;color:var(--grey2);font-weight:600;text-transform:uppercase;letter-spacing:.08em}
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:44px;background:transparent;margin:6px 0 0}
+input[type=range]::-webkit-slider-runnable-track{height:6px;border-radius:6px;background:#F3E6E0}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:34px;height:34px;border-radius:50%;background:var(--btn);margin-top:-14px;box-shadow:0 6px 16px -4px rgba(232,50,124,.7),0 0 0 6px rgba(248,160,196,.3);cursor:grab}
+input[type=range]::-moz-range-track{height:6px;border-radius:6px;background:#F3E6E0}
+input[type=range]::-moz-range-thumb{width:34px;height:34px;border:0;border-radius:50%;background:#EE4A8C;box-shadow:0 0 0 6px rgba(248,160,196,.3)}
+
+/* ---------- signs ---------- */
+.signs{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:22px;perspective:900px}
+.sg{position:relative;height:118px;border:0;padding:0;background:none;cursor:pointer;transform-style:preserve-3d;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.sg:nth-child(odd){rotate:-2deg}.sg:nth-child(even){rotate:2deg}
+.sg.fl{transform:rotateY(180deg)}
+.sg .fa,.sg .ba{position:absolute;inset:0;border-radius:14px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:10px;backface-visibility:hidden;-webkit-backface-visibility:hidden;box-shadow:0 16px 26px -16px rgba(0,0,0,.4)}
+.sg .fa{background:#fff;border:4px solid var(--pk);font-weight:800;font-size:17px;line-height:1.15}
+.sg .fa::before{content:"";width:28px;height:28px;border-radius:50%;border:4px solid #D93A3A;margin-bottom:6px;background:linear-gradient(135deg,transparent 45%,#D93A3A 45%,#D93A3A 58%,transparent 58%)}
+.sg.go .fa::before{border-color:#22a35a;background:#22a35a;box-shadow:inset 0 0 0 5px #fff}
+.sg .ba{background:var(--grad);color:#fff;transform:rotateY(180deg);font-size:15px;font-weight:600}
+.sg .ba small{display:block;font-size:11px;opacity:.85;margin-top:4px;font-weight:400}
+
+/* ---------- quiz ---------- */
+.quiz{margin-top:22px;background:#fff;border-radius:26px;padding:22px 18px;box-shadow:0 30px 50px -36px rgba(160,70,60,.55)}
+.qbar{height:6px;border-radius:6px;background:#F3E6E0;overflow:hidden}
+.qbar i{display:block;height:100%;background:var(--grad);transition:width .5s}
+.qn{display:flex;justify-content:space-between;font-size:12px;color:var(--grey);margin:10px 0 14px;font-weight:600}
+.qq{font-size:20px;font-weight:700;line-height:1.3}
+.qv{display:inline-block;margin-top:8px;background:var(--salmon);color:var(--salmon-t);border-radius:8px;padding:4px 10px;font-size:13px;font-weight:600}
+.qo{display:grid;gap:8px;margin-top:16px}
+.qo button{border:0;text-align:left;background:var(--peach);border-radius:16px;padding:16px 18px;font-size:18px;font-weight:700;cursor:pointer;transition:.25s;display:flex;justify-content:space-between;align-items:center}
+.qo button.ok{background:#E4F7EA;color:#16813f;box-shadow:0 0 0 2px #7fd39e inset}
+.qo button.no{background:#FFE7E7;color:#D93A3A;box-shadow:0 0 0 2px #F3B1B1 inset;animation:shake .45s}
+.qo button:disabled{cursor:default}
+.qe{margin-top:14px;background:var(--peach);border-radius:16px;padding:14px 16px;font-size:15px;display:none}
+.qe.on{display:block;animation:popin .4s ease}
+.qe b{color:var(--pk)}
+.qres{text-align:center;padding:10px 0}
+.qres .sc{font-family:Oswald;font-weight:700;font-size:96px;line-height:1;color:var(--pk)}
+.qres p{font-size:19px;font-weight:600;margin:10px 0 18px}
+
+/* ---------- cheat ---------- */
+.cheat{margin-top:22px;border-radius:22px;overflow:hidden;background:#fff;box-shadow:0 30px 50px -36px rgba(160,70,60,.55)}
+.cheat table{width:100%;border-collapse:collapse;font-size:14px}
+.cheat th{background:var(--grad);color:#fff;font-weight:700;padding:12px 8px;text-align:left}
+.cheat td{padding:11px 8px;border-top:1px solid #F5E7E1;font-weight:600}
+.cheat td:first-child{color:var(--grey);font-weight:500;font-size:12px}
+.cheat tr:nth-child(even) td{background:#FFF8F5}
+
+/* ---------- AD ---------- */
+.adbanner{background:var(--grad);color:#fff;border-radius:var(--r);padding:30px 20px;overflow:hidden;position:relative}
+.adbanner .pill{background:#1D1C1E}
+.adbanner h2{font-weight:500;font-size:clamp(34px,9.4vw,62px);line-height:1.02;margin:18px 0 0;letter-spacing:-.02em}
+.adbanner h2 .scr{font-size:1.15em;display:inline-block;transform:rotate(-3deg)}
+.adbanner .lead{color:#fff}
+.stack{position:relative;height:250px;margin:26px 0 6px}
+.stack img{position:absolute;width:74%;border-radius:14px;box-shadow:0 24px 40px -18px rgba(90,0,40,.6)}
+.stack img:nth-child(1){left:0;top:40px;transform:rotate(-14deg)}
+.stack img:nth-child(2){left:13%;top:18px;transform:rotate(-6deg)}
+.stack img:nth-child(3){right:0;top:0;transform:rotate(3deg)}
+.vidcard{background:#fff;border-radius:26px;padding:10px;margin-top:10px}
+.vidcard video{width:100%;border-radius:18px;background:#f3eee9;aspect-ratio:16/9;object-fit:cover}
+.vidcard p{color:var(--ink);font-size:14px;padding:10px 6px 4px}
+.vidcard p b{color:var(--pk)}
+
+.pains{display:grid;gap:14px;margin-top:22px}
+.inside{display:grid;gap:18px;margin-top:24px}
+.inside .it{display:flex;gap:14px;align-items:flex-start;font-size:17px;line-height:1.35}
+.inside .it b{color:var(--pk)}
+.nums{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:22px}
+.nums div{background:#fff;border-radius:18px;padding:14px 6px;text-align:center;display:flex;flex-direction:column;justify-content:center}
+.nums b{display:block;font-family:Oswald;font-size:34px;line-height:1;color:var(--pk)}
+.nums span{font-size:11px;color:var(--grey);font-weight:500}
+
+.car{display:flex;align-items:flex-start;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;margin:20px -20px 0;padding:4px 20px 14px;scrollbar-width:none}
+.car::-webkit-scrollbar{display:none}
+.car>*{scroll-snap-align:center;flex:none}
+.arrows{display:flex;gap:10px}
+.arrows button{width:46px;height:46px;border-radius:50%;border:0;background:var(--btn);color:#fff;cursor:pointer;display:grid;place-items:center;box-shadow:0 10px 20px -8px rgba(232,50,124,.7)}
+.arrows svg{width:18px;height:18px}
+.shead{display:flex;justify-content:space-between;align-items:flex-end;gap:14px;flex-wrap:wrap}
+.vslide{width:86%;max-width:520px;background:#fff;border-radius:24px;padding:10px;box-shadow:0 24px 40px -30px rgba(160,70,60,.6)}
+.vslide video,.vslide img{width:100%;border-radius:16px;aspect-ratio:16/10;object-fit:cover;object-position:top;background:#f3eee9}
+.vslide.tall{width:62%;max-width:300px}
+.vslide.tall video{aspect-ratio:9/14}
+.vslide p{font-size:14px;padding:12px 6px 6px;line-height:1.4}
+.vslide p b{color:var(--pk)}
+.rslide{width:84%;max-width:460px;background:#fff;border-radius:24px;padding:10px;box-shadow:0 24px 40px -30px rgba(160,70,60,.6)}
+.rslide img{border-radius:16px;width:100%}
+
+.forwho{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:22px}
+.fw{background:var(--peach2);border-radius:22px;padding:10px 10px 16px;text-align:center;font-size:13px;line-height:1.35}
+.fw .pic{position:relative;background:#fff;border-radius:16px;height:84px;display:grid;place-items:center;font-size:42px;margin-bottom:12px}
+.fw .pic i{position:absolute;right:8px;top:8px;width:20px;height:20px;border-radius:6px;background:var(--grad)}
+.fw b{color:var(--pk)}
+.fw.wide{grid-column:1/-1}
+
+.tariffs{display:grid;gap:16px;margin-top:26px}
+.tf{border-radius:26px;overflow:hidden;background:var(--peach);position:relative}
+.tf .tfh{position:relative;height:120px;display:grid;place-items:center;background:var(--peach2);overflow:hidden}
+.tf .tfh .big{position:absolute;font-family:Oswald;font-weight:700;font-size:78px;color:#fff;opacity:.7;letter-spacing:-.01em;white-space:nowrap}
+.tf .tfh svg{position:relative;width:110px;height:110px;filter:drop-shadow(0 12px 14px rgba(0,0,0,.2));animation:float 6s ease-in-out infinite}
+.tf ul{list-style:none;margin:0;padding:18px 20px 6px}
+.tf li{position:relative;padding-left:20px;margin:0 0 12px;font-size:15px;line-height:1.35}
+.tf li::before{content:"";position:absolute;left:0;top:.5em;width:7px;height:7px;border-radius:50%;background:var(--pk)}
+.tf li.no{color:#C8B6AE;text-decoration:line-through}
+.tf li.no::before{background:#E8D6CD}
+.tf li b{font-weight:700}
+.tf .price{margin:10px 12px 12px;border-radius:18px;background:#fff;text-align:center;padding:14px 10px}
+.tf .price b{font-family:Oswald;font-size:40px;color:var(--pk);line-height:1}
+.tf .price s{color:var(--grey2);font-size:18px;margin-right:8px}
+.tf .price small{display:block;font-size:12px;color:var(--grey)}
+.tf .btn{margin:0 12px 14px;width:calc(100% - 24px);min-height:54px}
+.tf.hot{background:var(--grad);color:#fff;transform:scale(1.0);box-shadow:0 30px 50px -24px rgba(232,50,124,.7)}
+.tf.hot .tfh{background:linear-gradient(180deg,#F25B98,#E8327C)}
+.tf.hot li::before{background:#fff}
+.tf.hot li.gift{background:rgba(255,255,255,.18);border-radius:12px;padding:10px 12px 10px 32px}
+.tf.hot li.gift::before{left:12px;top:1em}
+.tf.hot .price{background:rgba(255,255,255,.95)}
+.tf.hot .btn{background:#fff;color:var(--pk);box-shadow:0 12px 26px -10px rgba(90,0,40,.6)}
+.tf .badge{position:absolute;z-index:2;top:12px;right:12px;background:#1D1C1E;color:#fff;font-size:11px;font-weight:700;border-radius:8px;padding:6px 10px;letter-spacing:.05em}
+.tnote{text-align:center;font-size:14px;color:var(--grey);margin-top:16px}
+
+.final{background:var(--grad);color:#fff;border-radius:var(--r);padding:32px 20px 0;overflow:hidden;position:relative}
+.final .h{color:#fff}
+.final .lead{color:#fff}
+.final .signpost{height:290px;margin-top:6px}
+.final .board.b1{top:30px}.final .board.b2{top:140px}
+.final .board.b1{background:linear-gradient(180deg,#fff,#FFE9F1);color:var(--pk)}
+.final .board.b1 .km{border-color:rgba(232,50,124,.4)}
+.final .btns{display:grid;gap:10px;margin-top:22px}
+.final .btn.white{background:#fff;color:var(--pk);box-shadow:0 14px 30px -10px rgba(90,0,40,.6)}
+.final .btn.line{background:transparent;box-shadow:0 0 0 2px rgba(255,255,255,.7) inset}
+
+footer{padding:30px 0 110px;text-align:center;color:var(--grey);font-size:13px}
+footer .brand{justify-content:center;margin-bottom:10px;color:var(--ink)}
+
+.sticky{position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:60;display:flex;align-items:center;justify-content:space-between;gap:10px;background:#1D1C1E;color:#fff;border-radius:20px;padding:10px 10px 10px 18px;transform:translateY(140%);transition:transform .45s cubic-bezier(.2,.8,.2,1);box-shadow:0 20px 40px -14px rgba(0,0,0,.5)}
+.sticky.on{transform:none}
+.sticky small{display:block;font-size:11px;color:#bbb}
+.sticky b{font-size:15px}
+.sticky a{background:var(--btn);color:#fff;text-decoration:none;font-weight:700;font-size:12px;letter-spacing:.1em;text-transform:uppercase;border-radius:14px;padding:14px 16px;white-space:nowrap}
+
+
+/* ---------- extra motion & visuals ---------- */
+.h .w{display:inline-block;white-space:nowrap}
+.h .c{display:inline-block;opacity:0;transform:translateY(55%) rotate(8deg);transition:opacity .45s ease,transform .75s cubic-bezier(.2,.8,.2,1.25);transition-delay:calc(var(--i) * 22ms)}
+.h.in .c{opacity:1;transform:none}
+.btn{position:relative;overflow:hidden}
+.btn::after{content:"";position:absolute;top:0;bottom:0;left:-60%;width:40%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.5),transparent);transform:skewX(-20deg);animation:shine 3.8s ease-in-out infinite;pointer-events:none}
+.btn.ghost::after{background:linear-gradient(100deg,transparent,rgba(232,50,124,.18),transparent)}
+@keyframes shine{0%,62%{left:-60%}100%{left:140%}}
+
+.marquee{position:relative;overflow:hidden;background:#1D1C1E;color:#fff;border-radius:18px;padding:14px 0;margin:22px 0;transform:rotate(-1.6deg)}
+.marquee.pinkm{background:var(--grad);transform:rotate(1.4deg)}
+.mq{display:flex;align-items:center;gap:22px;width:max-content;animation:mq 30s linear infinite;font-family:Oswald,sans-serif;font-weight:700;text-transform:uppercase;font-size:28px;line-height:1;white-space:nowrap}
+.mq i{font-style:normal;color:var(--pk);font-size:20px}
+.mq em{font-style:normal;color:var(--pk2)}
+.marquee.pinkm .mq{animation-direction:reverse;animation-duration:36s}
+.marquee.pinkm .mq i{color:#fff}
+.marquee.pinkm .mq em{color:#1D1C1E}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+.badge-spin{position:absolute;left:0;top:-6px;width:84px;height:84px;z-index:3;animation:spin 16s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+.db{position:relative;background:#0B1E4B;border-radius:18px;padding:14px 16px 0;color:#fff;margin:0 0 22px;overflow:hidden;box-shadow:0 22px 34px -22px rgba(11,30,75,.8)}
+.db-top{display:flex;justify-content:space-between;align-items:center;font-size:13px;font-weight:700;color:#9fb3e6}
+.db-line{background:#fff;color:#0B1E4B;border-radius:6px;padding:2px 8px;font-weight:800}
+.db-dest{position:relative;height:34px;margin:8px 0 2px;font-size:24px;font-weight:800;overflow:hidden}
+.db-dest span{position:absolute;left:0;top:0;white-space:nowrap}
+.db-dest .d2{color:#FF6B81;opacity:0}
+.db.play .d1{animation:dd1 9s infinite}
+.db.play .d2{animation:dd2 9s infinite}
+@keyframes dd1{0%,42%{opacity:1;transform:none}48%,100%{opacity:0;transform:translateY(-100%)}}
+@keyframes dd2{0%,44%{opacity:0;transform:translateY(100%)}50%,58%,66%,74%,96%{opacity:1;transform:none}54%,62%,70%{opacity:.25;transform:none}100%{opacity:0}}
+.db-tick{overflow:hidden;font-size:12px;color:#FFD166;font-weight:600;margin-bottom:4px}
+.db-tick div{display:flex;gap:30px;width:max-content;animation:mq 14s linear infinite}
+.db-rail{position:relative;height:58px;margin:0 -16px;border-top:1px dashed rgba(255,255,255,.14)}
+.db-rail::after{content:"";position:absolute;left:0;right:0;bottom:8px;height:3px;background:repeating-linear-gradient(90deg,#8a96b8 0 14px,transparent 14px 20px)}
+.trainx{position:absolute;left:18px;bottom:12px;display:flex;gap:4px;transform:translateX(520px)}
+.trainx i{position:relative;display:block;width:100px;height:36px;border-radius:6px;background:linear-gradient(180deg,#fff 0 58%,#E8327C 58% 72%,#fff 72%)}
+.trainx i:first-child{border-radius:20px 6px 6px 6px}
+.trainx i::before{content:"";position:absolute;left:12px;right:10px;top:7px;height:11px;border-radius:2px;background:repeating-linear-gradient(90deg,#20355f 0 16px,transparent 16px 21px)}
+.db.play .trainx{animation:trin 9s cubic-bezier(.25,.8,.3,1) infinite}
+@keyframes trin{0%{transform:translateX(520px)}28%,92%{transform:none;opacity:1}100%{transform:none;opacity:0}}
+.me-dot{position:absolute;right:26px;bottom:14px;font-size:22px}
+
+.tl{position:relative;margin-top:26px;padding-left:34px}
+.tl::before{content:"";position:absolute;left:11px;top:6px;bottom:6px;width:3px;border-radius:3px;background:#F3DDD3}
+.tl-fill{position:absolute;left:11px;top:6px;width:3px;border-radius:3px;background:var(--grad);height:0;max-height:calc(100% - 12px)}
+.tli{position:relative;display:flex;gap:12px;align-items:center;background:#fff;border-radius:20px;padding:12px 12px 12px 12px;margin-bottom:12px;box-shadow:0 18px 30px -24px rgba(160,70,60,.55)}
+.tli::before{content:"";position:absolute;left:-29px;top:50%;margin-top:-7px;width:13px;height:13px;border-radius:50%;background:#fff;box-shadow:0 0 0 3px #F3DDD3;transition:.5s}
+.tli.lit::before{background:var(--pk);box-shadow:0 0 0 3px #FFD0E1,0 0 0 9px rgba(232,50,124,.14)}
+.tli .em{flex:none;width:50px;height:50px;border-radius:14px;background:var(--peach);display:grid;place-items:center;font-size:28px}
+.tli .tx2{flex:1;min-width:0}
+.tli .tm{font-size:11px;color:var(--grey);font-weight:600}
+.tli b{display:block;font-size:17px;line-height:1.2}
+.tli span.ru{font-size:13px;color:var(--grey)}
+.rv.left{transform:translateX(-30px)}
+.rv.left.in{transform:none}
+
+.bruno{margin-top:14px;background:#fff;border-radius:26px;padding:18px;box-shadow:0 30px 50px -36px rgba(160,70,60,.55)}
+.bruno h3{font-family:Oswald;font-weight:700;text-transform:uppercase;font-size:30px;line-height:1;margin:0 0 12px}
+.bruno-stage{position:relative;height:200px;border-radius:20px;background:linear-gradient(180deg,#FFF7F3 0%,#FBE2D6 70%,#F6CDBB 70%);overflow:hidden;display:flex;align-items:flex-end;justify-content:center}
+.dog{font-size:100px;line-height:1;margin-bottom:34px;transform-origin:50% 100%;transition:transform .6s cubic-bezier(.3,1.6,.5,1)}
+.dog.sitz{transform:scaleY(.78) scaleX(1.06)}
+.dog.platz{transform:scaleY(.48) scaleX(1.28)}
+.dog.komm{transform:scale(1.55) translateY(8px)}
+.dog.dreh{animation:dreh .9s ease}
+.dog.pfote{animation:wig .5s ease 2}
+.dog.nope{animation:nope .5s ease}
+@keyframes dreh{to{transform:rotateY(360deg)}}
+@keyframes wig{25%{transform:rotate(-14deg)}75%{transform:rotate(14deg)}}
+@keyframes nope{30%{transform:translateX(-6px)}60%{transform:translateX(6px)}}
+.dbub{position:absolute;top:14px;left:50%;max-width:88%;transform:translateX(-50%) scale(.6);opacity:0;background:#1D1C1E;color:#fff;border-radius:14px;padding:8px 12px;font-size:14px;font-weight:600;text-align:center;transition:.35s cubic-bezier(.3,1.5,.5,1)}
+.dbub.on{opacity:1;transform:translateX(-50%) scale(1)}
+.heart{position:absolute;bottom:90px;font-size:22px;pointer-events:none;animation:heart 1.4s ease-out forwards}
+@keyframes heart{to{transform:translateY(-120px) scale(1.4);opacity:0}}
+.bruno .exs button.act{background:var(--grad);color:#fff;box-shadow:none}
+.bruno .exs button.act svg{color:#fff}
+
+.breath{margin-top:14px;background:#fff;border-radius:26px;padding:20px 18px;text-align:center;box-shadow:0 30px 50px -36px rgba(160,70,60,.55)}
+.lung{position:relative;width:190px;height:190px;margin:6px auto 14px;display:grid;place-items:center}
+.lung .ring{position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle,#FFD6E5 0%,#F4679F 72%);box-shadow:0 0 0 14px rgba(244,103,159,.14),0 0 0 28px rgba(244,103,159,.07);transform:scale(.58)}
+.breath.play .ring{animation:breathe 6s ease-in-out infinite}
+@keyframes breathe{0%,100%{transform:scale(.58)}45%,55%{transform:scale(1)}}
+.lung .lt2{position:absolute;inset:0;display:grid;place-items:center;color:#fff;font-weight:800;font-size:19px;line-height:1.1;text-shadow:0 2px 8px rgba(160,20,70,.35)}
+.lung .lt2 b{display:inline-block;background:#1D1C1E;border-radius:8px;padding:2px 8px;margin-top:4px}
+.lung .aus{opacity:0}
+.breath.play .ein{animation:bein 6s infinite}
+.breath.play .aus{animation:baus 6s infinite}
+@keyframes bein{0%,44%{opacity:1}50%,96%{opacity:0}100%{opacity:1}}
+@keyframes baus{0%,46%{opacity:0}52%,94%{opacity:1}100%{opacity:0}}
+.cf{position:fixed;width:8px;height:12px;border-radius:2px;pointer-events:none;z-index:200}
+.tf{will-change:transform}
+/* ---------- desktop ---------- */
+@media (min-width:900px){
+  .wrap{padding:0 24px}
+  section{margin:20px 0}
+  .panel,.adbanner,.final{padding:56px 56px}
+  .hero{padding:40px 56px 56px}
+  .hero-grid{grid-template-columns:1.1fr .9fr;align-items:center;gap:30px}
+  .hero-h{font-size:clamp(56px,5.6vw,78px)}
+  .hero .cta{flex-direction:row;align-items:center}
+  .signpost{height:420px}
+  .split{grid-template-columns:1fr 1.15fr}
+  .faces{grid-template-columns:repeat(3,1fr)}
+  .machine{display:grid;grid-template-columns:.8fr 1.2fr;gap:36px;align-items:start}
+  .chips{flex-wrap:wrap;margin:18px 0 0;padding:4px 0 10px}
+  .traps{grid-template-columns:repeat(3,1fr)}
+  .traps .case:nth-child(4),.traps .case:nth-child(5){grid-column:span 1}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+  .signs{grid-template-columns:repeat(4,1fr)}
+  .pains{grid-template-columns:repeat(3,1fr)}
+  .inside{grid-template-columns:repeat(2,1fr);gap:26px 40px}
+  .forwho{grid-template-columns:repeat(5,1fr)}
+  .fw.wide{grid-column:auto}
+  .tariffs{grid-template-columns:repeat(3,1fr);align-items:center}
+  .tf.hot{transform:scale(1.04)}
+  .adgrid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+  .final .inner{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:end}
+  .final .btns{grid-template-columns:1fr 1fr;padding-bottom:56px}
+  .car{margin:20px 0 0;padding:4px 0 14px}
+  .vslide{width:46%}
+  .vslide.tall{width:22%}
+  .rslide{width:38%}
+  .sticky{left:auto;right:24px;width:380px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  .rv{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== SVG sprites ===== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <radialGradient id="gStar" cx="35%" cy="30%" r="75%"><stop offset="0" stop-color="#FFF4EC"/><stop offset=".5" stop-color="#F7C2A8"/><stop offset="1" stop-color="#E88E86"/></radialGradient>
+    <radialGradient id="gStarP" cx="35%" cy="30%" r="75%"><stop offset="0" stop-color="#FFE4EE"/><stop offset=".5" stop-color="#F58DB5"/><stop offset="1" stop-color="#D8266F"/></radialGradient>
+    <linearGradient id="gChrome" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff"/><stop offset=".3" stop-color="#b9b9c0"/><stop offset=".55" stop-color="#f4f4f6"/><stop offset=".8" stop-color="#7c7c86"/><stop offset="1" stop-color="#d9d9de"/></linearGradient>
+    <linearGradient id="gHeart" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFC2D9"/><stop offset=".45" stop-color="#F2528F"/><stop offset="1" stop-color="#B8175A"/></linearGradient>
+  </defs>
+  <symbol id="star4" viewBox="0 0 100 100"><path d="M50 0C54 36 64 46 100 50 64 54 54 64 50 100 46 64 36 54 0 50 36 46 46 36 50 0Z"/></symbol>
+  <symbol id="spk" viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"/><path d="M16 8.5a4.5 4.5 0 0 1 0 7M18.6 6a8 8 0 0 1 0 12" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></symbol>
+  <symbol id="arrR" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="arrL" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7" stroke="currentColor" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2l2.9 6.5 7.1.7-5.3 4.8 1.5 7-6.2-3.6L5.8 21l1.5-7L2 9.2l7.1-.7z"/></symbol>
+  <symbol id="i-fire" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2s1 3.5-1.5 6S7 12 7 15a5 5 0 0 0 10 0c0-2-1-3.5-1-3.5S15 14 13 14c0 0 3-4-1-12z"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24"><path fill="currentColor" d="M4 4h7a3 3 0 0 1 3 3v13a2 2 0 0 0-2-2H4zM20 4h-4a2 2 0 0 0-2 2v12a2 2 0 0 1 2-2h4z"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path fill="currentColor" d="M7 4l13 8-13 8z"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-wave" viewBox="0 0 24 24"><path d="M3 12h2M7 8v8M11 5v14M15 8v8M19 11v2" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></symbol>
+  <symbol id="i-ai" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2l1.8 5.2L19 9l-5.2 1.8L12 16l-1.8-5.2L5 9l5.2-1.8zM19 14l.9 2.1L22 17l-2.1.9L19 20l-.9-2.1L16 17l2.1-.9z"/></symbol>
+  <symbol id="i-film" viewBox="0 0 24 24"><path fill="currentColor" d="M4 5h16v14H4zm2 2v2h2V7zm10 0v2h2V7zM6 15v2h2v-2zm10 0v2h2v-2z"/></symbol>
+  <symbol id="i-cup" viewBox="0 0 24 24"><path fill="currentColor" d="M7 3h10v4a5 5 0 0 1-4 4.9V15h3v3H8v-3h3v-3.1A5 5 0 0 1 7 7zM4 5h2v3a2 2 0 0 1-2-2zm16 0v1a2 2 0 0 1-2 2V5z"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><path fill="currentColor" d="M4 20V10h3v10zm6 0V4h3v16zm6 0v-7h3v7z"/></symbol>
+  <symbol id="i-wifi" viewBox="0 0 24 24"><path d="M3 3l18 18M8.5 16.5a5 5 0 0 1 7 0M5 12.5a10 10 0 0 1 4-2.3M19 12.5a10 10 0 0 0-3.2-2" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round"/><circle cx="12" cy="19.5" r="1.4" fill="currentColor"/></symbol>
+</svg>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="media/logo.png" alt="">Stellas</a>
+    <a class="pillbtn" href="#platform">Платформа</a>
+  </div>
+  <div class="prog" id="prog"></div>
+</header>
+
+<main class="wrap" id="top">
+
+<!-- ===================== HERO ===================== -->
+<section class="panel hero">
+  <div class="blob" style="width:320px;height:320px;right:-120px;top:120px"></div>
+  <div class="blob b2" style="width:280px;height:280px;left:-120px;bottom:40px"></div>
+  <svg class="star" style="width:34px;left:8%;top:38%;animation-delay:-2s"><use href="#star4" fill="url(#gStar)"/></svg>
+  <svg class="star" style="width:22px;right:10%;top:9%"><use href="#star4" fill="url(#gStar)"/></svg>
+
+  <div class="meta rv">
+    <div><small>тема</small><b>Imperativ</b></div>
+    <div><small>уровень</small><b>A1–A2</b></div>
+    <div><small>время</small><b>15 минут</b></div>
+  </div>
+
+  <span class="lbl rv">гайд stellas · грамматика</span>
+  <div class="hero-grid">
+    <div>
+      <h1 class="h hero-h rv"><span class="pk">Imperativ.</span><br>Как просить<br>по-немецки<br>и не звучать<br>как <span class="pk">прапорщик</span><span class="scr">без зубрёжки</span></h1>
+      <p class="lead rv" style="--d:2">Повелительное наклонение. Его ты слышишь каждый день: в&nbsp;поезде, у&nbsp;врача, на&nbsp;работе. <b>Разбираем за&nbsp;15&nbsp;минут. На&nbsp;историях.</b></p>
+      <div class="cta rv" style="--d:3">
+        <a class="btn glow" href="#story">Разобрать тему</a>
+        <a class="link" href="#platform">Сразу к платформе →</a>
+      </div>
+    </div>
+
+    <div class="signpost rv zoom" style="--d:2" aria-hidden="true">
+      <svg class="badge-spin" viewBox="0 0 100 100"><defs><path id="circ" d="M50,50 m-37,0 a37,37 0 1,1 74,0 a37,37 0 1,1 -74,0"/></defs><circle cx="50" cy="50" r="49" fill="#1D1C1E"/><text font-family="Oswald" font-size="10" font-weight="700" fill="#fff" letter-spacing="1.6"><textPath href="#circ">KOMM! ✦ GIB! ✦ WARTE! ✦ SEI! ✦ FAHR! ✦</textPath></text><text x="50" y="62" text-anchor="middle" font-family="Oswald" font-size="34" font-weight="700" fill="#E8327C">!</text></svg>
+      <div class="notif n3"><div class="av d">K</div><div><small>Kontrolleur · сейчас</small><b class="r">Steigen Sie aus!</b></div></div>
+      <div class="pole"></div>
+      <div class="clampx" style="top:78px"></div>
+      <div class="clampx" style="top:190px"></div>
+      <div class="board b1"><span class="km">du<br>·</span><span class="bt">Komm!</span><span class="ar">→</span></div>
+      <div class="board b2"><span class="ar">←</span><span class="bt">Kommen Sie!</span><span class="km">Sie<br>·</span></div>
+      <div class="notif n1"><div class="av">A</div><div><small>Arzt · 10:28</small><b class="r">Atmen Sie ein!</b></div></div>
+      <div class="notif n2"><div class="av y">N</div><div><small>Nachbar · 18:05</small><b>Sitz! Platz!</b></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee " aria-hidden="true"><div class="mq"><span>Komm!</span><i>✦</i><span>Warte!</span><i>✦</i><span><em>Gib!</em></span><i>✦</i><span>Steigen Sie aus!</span><i>✦</i><span>Hör zu!</span><i>✦</i><span><em>Sei ruhig!</em></span><i>✦</i><span>Fahr!</span><i>✦</i><span>Beeil dich!</span><i>✦</i><span><em>Mach auf!</em></span><i>✦</i><span>Komm!</span><i>✦</i><span>Warte!</span><i>✦</i><span><em>Gib!</em></span><i>✦</i><span>Steigen Sie aus!</span><i>✦</i><span>Hör zu!</span><i>✦</i><span><em>Sei ruhig!</em></span><i>✦</i><span>Fahr!</span><i>✦</i><span>Beeil dich!</span><i>✦</i><span><em>Mach auf!</em></span><i>✦</i></div></div>
+
+<!-- ===================== STORY 1 (train) ===================== -->
+<section id="story" class="split">
+  <div class="panel pink task">
+    <div class="blob" style="width:260px;height:260px;right:-90px;bottom:-60px;background:radial-gradient(circle,#ff9cc3,transparent 70%)"></div>
+    <h3 class="rv">Главная <span class="scr">задача:</span></h3>
+    <ul>
+      <li class="rv" style="--d:1"><span class="ico"><svg><use href="#i-star"/></svg></span>понимать, что тебе приказывают. В&nbsp;поезде, у&nbsp;врача, на&nbsp;работе</li>
+      <li class="rv" style="--d:2"><span class="ico"><svg><use href="#i-fire"/></svg></span>просить так, чтобы никто не&nbsp;обиделся</li>
+    </ul>
+    <div class="note rv" style="--d:3">
+      <p>Немцы разговаривают командами. Не&nbsp;потому что злые. <b>Язык так устроен.</b></p>
+    </div>
+  </div>
+
+  <div class="panel story">
+    <span class="part">1/4</span>
+    <p class="lt rv" style="margin-bottom:22px">Несколько <span class="scr" style="font-size:1.1em">слов</span> <b class="pk">о&nbsp;теме</b></p>
+    <div class="db loop rv" aria-hidden="true">
+      <div class="db-top"><span>Gleis 3 · 14:02</span><span class="db-line">RE 1</span></div>
+      <div class="db-dest"><span class="d1">Köln Hbf</span><span class="d2">Zug endet hier</span></div>
+      <div class="db-tick"><div><span>+++ Bitte alle aussteigen +++ Nicht einsteigen +++ Zurückbleiben, bitte +++</span><span>+++ Bitte alle aussteigen +++ Nicht einsteigen +++ Zurückbleiben, bitte +++</span></div></div>
+      <div class="db-rail"><div class="trainx"><i></i><i></i></div><span class="me-dot">🧍</span></div>
+    </div>
+    <p class="ln">У меня была электричка. Вернее, я в ней ехал. RE до&nbsp;Кёльна.</p>
+    <p class="ln">На какой-то станции поезд встаёт. Динамик говорит что-то длинное. В&nbsp;конце — <b>Steigen Sie bitte alle aus.</b></p>
+    <p class="ln">Все встают. Выходят. Я сижу. Думаю, немцы вышли покурить.</p>
+    <p class="ln">Заходит кондуктор. Смотрит на&nbsp;меня.</p>
+    <div class="bub"><small>Kontrolleur <i>14:02</i></small><div class="tx">Aussteigen! <button class="say" data-say="Aussteigen!" aria-label="Послушать"><svg><use href="#spk"/></svg></button></div><span class="tr">Выходите!</span></div>
+    <div class="bub me"><small>Я <i>14:02</i></small><div class="tx">Warum?</div><span class="tr">Почему?</span></div>
+    <div class="bub"><small>Kontrolleur <i>14:02</i></small><div class="tx">Zug endet hier. Raus! <button class="say" data-say="Der Zug endet hier. Raus!" aria-label="Послушать"><svg><use href="#spk"/></svg></button></div><span class="tr">Поезд дальше не идёт. На выход!</span></div>
+    <p class="ln">Я вышел. Следующий поезд — через сорок минут.</p>
+    <p class="ln punch">Сорок минут я стоял на&nbsp;перроне и&nbsp;учил Imperativ.</p>
+  </div>
+</section>
+
+<!-- ===================== DAY TIMELINE ===================== -->
+<section class="panel white" id="day">
+  <div class="blob" style="width:300px;height:300px;right:-140px;top:20%"></div>
+  <svg class="star" style="width:26px;right:8%;top:5%"><use href="#star4" fill="url(#gStarP)"/></svg>
+  <div class="two">
+    <div>
+      <h2 class="h h2 rv">Один день<br><span class="pk">в командах</span></h2>
+      <p class="lead rv">Я посчитал. За один обычный день мне сказали семь команд. <b>Семь.</b> И это я ещё из дома поздно вышел.</p>
+      <p class="gline rv">Если не понимаешь Imperativ — ты не понимаешь половину того, что от тебя хотят.</p>
+    </div>
+    <div class="tl" id="tl"><div class="tl-fill" id="tlFill"></div>
+      <div class="tli rv left"><span class="em">🥐</span><div class="tx2"><span class="tm">07:40 · Bäckerei</span><b>Moment, warten Sie kurz!</b><span class="ru">Секунду, подождите!</span></div><button class="say" data-say="Moment, warten Sie kurz!" aria-label="Послушать"><svg><use href="#spk"/></svg></button></div>
+      <div class="tli rv left"><span class="em">🚇</span><div class="tx2"><span class="tm">08:15 · U-Bahn</span><b>Zurückbleiben, bitte!</b><span class="ru">Отойдите от дверей!</span></div><button class="say" data-say="Zurückbleiben, bitte!" aria-label="Послушать"><svg><use href="#spk"/></svg></button></div>
+      <div class="tli rv left"><span class="em">🩺</span><div class="tx2"><span class="tm">10:30 · Arzt</span><b>Atmen Sie tief ein!</b><span class="ru">Глубокий вдох!</span></div><button class="say" data-say="Atmen Sie tief ein!" aria-label="Послушать"><svg><use href="#spk"/></svg></button></div>
+      <div class="tli rv left"><span class="em">💼</span><div class="tx2"><span class="tm">13:00 · Chef</span><b>Mach mal schneller!</b><span class="ru">Давай-ка быстрее!</span></div><button class="say" data-say="Mach mal schneller!" aria-label="Послушать"><svg><use href="#spk"/></svg></button></div>
+      <div class="tli rv left"><span class="em">🏛️</span><div class="tx2"><span class="tm">16:20 · Behörde</span><b>Ziehen Sie eine Nummer!</b><span class="ru">Возьмите талон!</span></div><button class="say" data-say="Ziehen Sie eine Nummer!" aria-label="Послушать"><svg><use href="#spk"/></svg></button></div>
+      <div class="tli rv left"><span class="em">🐕</span><div class="tx2"><span class="tm">18:05 · Nachbar</span><b>Sitz! Platz!</b><span class="ru">Это Бруно. Не тебе.</span></div><button class="say" data-say="Sitz! Platz!" aria-label="Послушать"><svg><use href="#spk"/></svg></button></div>
+      <div class="tli rv left"><span class="em">💬</span><div class="tx2"><span class="tm">22:30 · Freundin</span><b>Schlaf gut!</b><span class="ru">Даже «спокойной ночи» — команда</span></div><button class="say" data-say="Schlaf gut!" aria-label="Послушать"><svg><use href="#spk"/></svg></button></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== THREE FACES ===================== -->
+<section class="panel" id="faces">
+  <div class="blob" style="width:300px;height:300px;left:-140px;top:-60px"></div>
+  <svg class="star" style="width:30px;right:6%;top:4%"><use href="#star4" fill="url(#gStarP)"/></svg>
+
+  <h2 class="h h2 rv"><span class="pk">Три лица</span><br>одной команды</h2>
+
+  <div class="case rv" style="margin-top:22px">
+    <div class="hd"><b>История 2/4</b> — сосед, собака и&nbsp;я</div>
+    <div class="bd story">
+      <p class="ln">У моего соседа собака. Овчарка. Зовут Бруно.</p>
+      <p class="ln">Сосед говорит: <b>Sitz!</b> Бруно садится.</p>
+      <p class="ln">Говорит: <b>Platz!</b> Бруно ложится.</p>
+      <p class="ln">Потом сосед смотрит на&nbsp;меня и&nbsp;говорит: <b>Komm mal her!</b></p>
+      <p class="ln">Я стою. Бруно идёт.</p>
+      <p class="ln punch">Бруно в&nbsp;Германии четыре года. Я&nbsp;— три. Бруно понял первым.</p>
+    </div>
+    <div class="res">Komm mal her! = Иди-ка сюда! <button class="say" data-say="Komm mal her!" aria-label="Послушать"><svg><use href="#spk"/></svg></button></div>
+  </div>
+
+  <div class="bruno rv">
+    <h3><span class="pk">Покомандуй</span> Бруно</h3>
+    <div class="bruno-stage"><div class="dbub" id="dbub"></div><div class="dog" id="dog">🐕</div></div>
+    <div class="exs" id="dogBtns">
+      <button data-cmd="sitz" data-say="Sitz!">Sitz! <small>сидеть</small></button>
+      <button data-cmd="platz" data-say="Platz!">Platz! <small>лежать</small></button>
+      <button data-cmd="komm" data-say="Komm!">Komm! <small>ко мне</small></button>
+      <button data-cmd="dreh" data-say="Dreh dich!">Dreh dich! <small>крутись</small></button>
+      <button data-cmd="pfote" data-say="Gib Pfote!">Gib Pfote! <small>дай лапу</small></button>
+      <button data-cmd="nope" data-say="Kommen Sie!">Kommen Sie! <small>на вы</small></button>
+      <button data-cmd="brav" data-say="Braver Hund!">Braver Hund! ❤️</button>
+    </div>
+    <p class="gline">Бруно понимает только du. Попробуй сказать ему «Kommen Sie!».</p>
+  </div>
+
+  <p class="lead rv">В немецком команду можно дать трём разным людям. <b>И&nbsp;это три разные формы.</b> Перепутал — и&nbsp;ты либо грубиян, либо странный.</p>
+
+  <div class="faces">
+    <div class="face rv" style="--d:1">
+      <div class="who">du</div><div class="tt">Для своих</div>
+      <p class="for">друг, ребёнок, партнёр, Бруно</p>
+      <span class="f">форма на du − du − st</span>
+      <div class="ex"><div><b>Komm!</b><span>Иди сюда!</span></div><button class="say" data-say="Komm!"><svg><use href="#spk"/></svg></button></div>
+      <div class="ex"><div><b>Gib mir das!</b><span>Дай мне это!</span></div><button class="say" data-say="Gib mir das!"><svg><use href="#spk"/></svg></button></div>
+    </div>
+    <div class="face rv" style="--d:2">
+      <div class="who">ihr</div><div class="tt">Для компании</div>
+      <p class="for">друзья, дети, коллеги-ровесники</p>
+      <span class="f">форма на ihr − ihr</span>
+      <div class="ex"><div><b>Kommt!</b><span>Идите сюда!</span></div><button class="say" data-say="Kommt!"><svg><use href="#spk"/></svg></button></div>
+      <div class="ex"><div><b>Gebt mir das!</b><span>Дайте мне это!</span></div><button class="say" data-say="Gebt mir das!"><svg><use href="#spk"/></svg></button></div>
+    </div>
+    <div class="face rv" style="--d:3">
+      <div class="who">Sie</div><div class="tt">Для взрослых</div>
+      <p class="for">врач, начальник, Behörde, незнакомец</p>
+      <span class="f">глагол + Sie</span>
+      <div class="ex"><div><b>Kommen Sie!</b><span>Проходите!</span></div><button class="say" data-say="Kommen Sie bitte!"><svg><use href="#spk"/></svg></button></div>
+      <div class="ex"><div><b>Geben Sie mir das!</b><span>Дайте мне это!</span></div><button class="say" data-say="Geben Sie mir das bitte!"><svg><use href="#spk"/></svg></button></div>
+    </div>
+  </div>
+
+  <div class="wir rv">
+    <span class="ico"><svg><use href="#i-star"/></svg></span>
+    <p style="font-size:15px"><b>Бонус — wir.</b> Когда ты тоже в&nbsp;деле: <b class="pk">Gehen wir!</b> — Пойдёмте! Глагол + wir. Всё.</p>
+    <button class="say" data-say="Gehen wir!"><svg><use href="#spk"/></svg></button>
+  </div>
+
+  <div class="case rv" style="margin-top:18px">
+    <div class="hd"><b>История 3/4</b> — кафе, минижоб и&nbsp;одно слово</div>
+    <div class="bd story">
+      <p class="ln">Моя знакомая работала в&nbsp;кафе. Минижоб.</p>
+      <p class="ln">Приходит пожилой немец. Пиджак, шляпа, газета. Заказывает воду.</p>
+      <p class="ln">Она ставит стакан и&nbsp;говорит: <b>Trink!</b></p>
+      <p class="ln">Хотела сказать «пейте на&nbsp;здоровье». Сказала «пей». На&nbsp;ты. Приказом.</p>
+      <p class="ln">Немец посмотрел на&nbsp;неё как на&nbsp;прапорщика. Выпил. Молча.</p>
+      <p class="ln punch">Чаевых не&nbsp;было.</p>
+    </div>
+    <div class="res">Правильно: Bitte schön! Или хотя бы Trinken Sie! <button class="say" data-say="Bitte schön!"><svg><use href="#spk"/></svg></button></div>
+  </div>
+</section>
+
+<!-- ===================== MACHINE ===================== -->
+<section class="panel white" id="formula">
+  <div class="blob" style="width:340px;height:340px;right:-160px;top:-80px"></div>
+  <div class="blob b2" style="width:300px;height:300px;left:-150px;bottom:-60px"></div>
+  <div class="machine">
+    <div>
+      <h2 class="h h2 rv">Собираем <span class="pk">команду</span></h2>
+      <p class="lt rv" style="font-size:clamp(28px,8vw,44px);margin-top:4px"><span class="scr pk">за&nbsp;4&nbsp;шага</span></p>
+      <p class="lead rv">Выбери глагол. Выбери, кому говоришь. Жми <b>«Показать»</b> — и&nbsp;смотри, как обычный глагол превращается в&nbsp;команду.</p>
+      <div class="chips" id="mVerbs"></div>
+      <div class="seg" id="mPer">
+        <button data-p="du" class="on">du<small>на ты</small></button>
+        <button data-p="ihr">ihr<small>вам, ребята</small></button>
+        <button data-p="Sie">Sie<small>на вы</small></button>
+      </div>
+    </div>
+    <div>
+      <div class="stagebox rv zoom">
+        <div class="stage" id="mStage" aria-live="polite"></div>
+        <div class="steps" id="mDots"></div>
+        <div class="mcap"><span class="n" id="mNum">Шаг 1</span><span id="mCap"></span></div>
+        <div class="mbtns">
+          <button class="btn" id="mPlay"><svg style="width:14px;height:14px"><use href="#i-play"/></svg>Показать</button>
+          <button class="btn ghost" id="mNext">Дальше →</button>
+          <button class="say" id="mSay" hidden aria-label="Послушать результат" style="width:52px;height:52px"><svg style="width:22px;height:22px"><use href="#spk"/></svg></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TRAPS ===================== -->
+<section class="panel" id="traps">
+  <svg class="star" style="width:26px;left:6%;top:3%"><use href="#star4" fill="url(#gStar)"/></svg>
+  <h2 class="h h2 rv"><span class="pk">Пять</span> ловушек</h2>
+  <p class="lead rv">Формула работает почти всегда. <b>Почти</b> — это вот эти пять мест.</p>
+
+  <div class="traps">
+    <div class="case rv">
+      <div class="hd"><b>Ловушка №1</b> — du не&nbsp;нужен</div>
+      <div class="bd">
+        <div class="demo loop"><span><span class="du">Du</span>Komm!</span></div>
+        <p style="font-size:15px">В команде местоимение du выкидываем. Всегда. «Du komm!» так говорит только магистр Йода.</p>
+        <div class="exs"><button data-say="Komm!">Komm! <small>иди</small><svg><use href="#spk"/></svg></button><button data-say="Hör zu!">Hör zu! <small>слушай</small><svg><use href="#spk"/></svg></button><button data-say="Setz dich!">Setz dich! <small>садись</small><svg><use href="#spk"/></svg></button></div>
+      </div>
+    </div>
+
+    <div class="case rv" style="--d:1">
+      <div class="hd"><b>Ловушка №2</b> — e&nbsp;→&nbsp;i остаётся</div>
+      <div class="bd">
+        <div class="demo loop"><span class="w1">Geb!</span><span class="w2">Gib!</span></div>
+        <p style="font-size:15px">Если в&nbsp;форме на du гласная меняется <b>e → i</b> или <b>e → ie</b>, в&nbsp;команде она тоже остаётся. du gibst → <b class="pk">Gib!</b></p>
+        <div class="exs"><button data-say="Gib!">Gib!<svg><use href="#spk"/></svg></button><button data-say="Nimm!">Nimm!<svg><use href="#spk"/></svg></button><button data-say="Lies!">Lies!<svg><use href="#spk"/></svg></button><button data-say="Sprich!">Sprich!<svg><use href="#spk"/></svg></button><button data-say="Iss!">Iss!<svg><use href="#spk"/></svg></button><button data-say="Hilf!">Hilf!<svg><use href="#spk"/></svg></button></div>
+      </div>
+    </div>
+
+    <div class="case rv" style="--d:2">
+      <div class="hd"><b>Ловушка №3</b> — умлаут отваливается</div>
+      <div class="bd">
+        <div class="demo loop"><span>F<span class="uml">a<i></i><i></i></span>hr!</span></div>
+        <p style="font-size:15px">А вот <b>a → ä</b> в&nbsp;команду не&nbsp;переезжает. du fährst → <b class="pk">Fahr!</b> Точки просто падают.</p>
+        <div class="exs"><button data-say="Fahr!">Fahr!<svg><use href="#spk"/></svg></button><button data-say="Schlaf!">Schlaf!<svg><use href="#spk"/></svg></button><button data-say="Lauf!">Lauf!<svg><use href="#spk"/></svg></button><button data-say="Trag!">Trag!<svg><use href="#spk"/></svg></button></div>
+      </div>
+    </div>
+
+    <div class="case rv">
+      <div class="hd"><b>Ловушка №4</b> — -e для тех, кто спотыкается</div>
+      <div class="bd">
+        <div class="demo loop"><span>Wart<span class="ee">e</span>!</span></div>
+        <p style="font-size:15px">Основа кончается на <b>-t</b>, <b>-d</b> или на неудобное сочетание? Добавь <b>-e</b>. Чтобы язык не&nbsp;сломался.</p>
+        <div class="exs"><button data-say="Warte!">Warte!<svg><use href="#spk"/></svg></button><button data-say="Arbeite!">Arbeite!<svg><use href="#spk"/></svg></button><button data-say="Öffne!">Öffne!<svg><use href="#spk"/></svg></button><button data-say="Entschuldige!">Entschuldige!<svg><use href="#spk"/></svg></button></div>
+        <p class="gline">Komme! Mache! Тоже правильно. Но звучит как из&nbsp;книжки 1950-го года.</p>
+      </div>
+    </div>
+
+    <div class="case rv" style="--d:1">
+      <div class="hd"><b>Ловушка №5</b> — sein, отдельный персонаж</div>
+      <div class="bd">
+        <div class="demo loop" style="height:auto;min-height:110px;font-size:22px"><div class="seinrow"><span>Sei!</span><span>Seid!</span><span>Seien Sie!</span><span>Seien wir!</span></div></div>
+        <p style="font-size:15px;margin-top:12px">sein всегда выпендривается. Запомни и&nbsp;не&nbsp;спорь.</p>
+        <div class="exs"><button data-say="Sei ruhig!">Sei ruhig! <small>успокойся</small><svg><use href="#spk"/></svg></button><button data-say="Seien Sie bitte pünktlich!">Seien Sie pünktlich!<svg><use href="#spk"/></svg></button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PREFIX ===================== -->
+<section class="panel white" id="prefix">
+  <div class="blob" style="width:320px;height:320px;left:-140px;top:30%"></div>
+  <div class="two">
+    <div>
+      <h2 class="h h2 rv"><span class="pk">Приставка</span><br>улетает в&nbsp;конец</h2>
+      <div class="case rv" style="margin-top:22px">
+        <div class="hd"><b>История 4/4</b> — Hausarzt</div>
+        <div class="bd story">
+          <p class="ln">Я пришёл к&nbsp;врачу. Кашель.</p>
+          <p class="ln">Врач слушает. Говорит: <b>Atmen Sie ein.</b> Я вдыхаю.</p>
+          <p class="ln">Говорит: <b>Atmen Sie aus.</b> Я встаю и&nbsp;иду к&nbsp;выходу.</p>
+          <p class="ln">Врач говорит: nein, nein. <b>Ausatmen!</b></p>
+          <p class="ln punch">Я сел обратно. Выдохнул. Во&nbsp;всех смыслах.</p>
+        </div>
+        <div class="res">ausatmen — выдыхать. aus — в конце! <button class="say" data-say="Atmen Sie bitte aus!"><svg><use href="#spk"/></svg></button></div>
+      </div>
+      <div class="breath loop rv" aria-hidden="true">
+        <p class="lbl" style="color:var(--pk)">дыши вместе с врачом</p>
+        <div class="lung"><div class="ring"></div>
+          <div class="lt2 ein"><div>🫁<br>Atmen Sie<br><b>ein!</b></div></div>
+          <div class="lt2 aus"><div>🫁<br>Atmen Sie<br><b>aus!</b></div></div>
+        </div>
+        <p style="font-size:15px">Вдох — <b class="pk">ein</b>. Выдох — <b class="pk">aus</b>. Приставка всегда в&nbsp;конце. Даже когда ты задыхаешься.</p>
+      </div>
+    </div>
+    <div>
+      <p class="lead rv">Глаголы с&nbsp;отделяемой приставкой в&nbsp;команде <b>ломаются пополам.</b> Основа идёт вперёд. Приставка — в&nbsp;самый конец.</p>
+      <div class="stagebox rv zoom">
+        <div class="stage" id="pStage"></div>
+        <div class="steps" id="pDots"></div>
+        <div class="mcap"><span class="n">Смотри</span><span id="pCap"></span></div>
+      </div>
+      <div class="exs rv">
+        <button data-say="Ruf mich an!">Ruf mich an! <small>позвони</small><svg><use href="#spk"/></svg></button>
+        <button data-say="Steigen Sie ein!">Steigen Sie ein! <small>садитесь</small><svg><use href="#spk"/></svg></button>
+        <button data-say="Hör auf!">Hör auf! <small>хватит</small><svg><use href="#spk"/></svg></button>
+        <button data-say="Mach die Tür zu!">Mach die Tür zu! <small>закрой дверь</small><svg><use href="#spk"/></svg></button>
+      </div>
+      <div class="wir rv" style="background:var(--peach)">
+        <span class="ico"><svg><use href="#i-fire"/></svg></span>
+        <p style="font-size:15px"><b>Возвратные — с&nbsp;собой.</b> sich beeilen: <b class="pk">Beeil dich! Beeilt euch! Beeilen Sie sich!</b></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== POLITENESS ===================== -->
+<section class="panel" id="polite">
+  <svg class="star" style="width:28px;right:8%;top:5%"><use href="#star4" fill="url(#gStarP)"/></svg>
+  <div class="two">
+    <div>
+      <h2 class="h h2 rv"><span class="pk">Шкала</span><br>вежливости</h2>
+      <p class="lead rv">Одна и&nbsp;та&nbsp;же просьба — закрыть окно. <b>Двигай ползунок.</b></p>
+      <p class="gline rv">Слово <b>mal</b> — это смазка. Слово <b>bitte</b> — страховка. Вместе работают лучше всего.</p>
+    </div>
+    <div class="pol rv zoom">
+      <span class="who" id="polWho"></span>
+      <div class="phr"><span id="polTxt"></span><button class="say" id="polSay" aria-label="Послушать"><svg><use href="#spk"/></svg></button></div>
+      <p class="nt" id="polNote"></p>
+      <div class="meter"><i id="polBar"></i></div>
+      <input type="range" id="pol" min="0" max="6" step="1" value="1" aria-label="Уровень вежливости">
+      <div class="ticks"><span>прапорщик</span><span>королева</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SIGNS ===================== -->
+<section class="panel white" id="signs">
+  <div class="blob b2" style="width:300px;height:300px;right:-140px;bottom:-80px"></div>
+  <h2 class="h h2 rv">Немецкие <span class="pk">таблички</span></h2>
+  <p class="lead rv">Немцы любят приказывать <b>инфинитивом.</b> Коротко. Без&nbsp;лица. Без&nbsp;эмоций. Нажми на&nbsp;табличку — переведу.</p>
+  <div class="signs" id="signGrid"></div>
+</section>
+
+<!-- ===================== QUIZ ===================== -->
+<section class="panel" id="quiz">
+  <div class="two">
+    <div>
+      <h2 class="h h2 rv">Проверь <span class="pk">себя</span></h2>
+      <p class="lead rv">Шесть вопросов. <b>С&nbsp;разбором</b>, почему так. Как на&nbsp;платформе.</p>
+    </div>
+    <div class="quiz rv zoom" id="quizBox"></div>
+  </div>
+</section>
+
+<!-- ===================== CHEAT ===================== -->
+<section class="panel white" id="cheat">
+  <h2 class="h h2 rv">Шпаргалка</h2>
+  <p class="lt rv" style="font-size:clamp(26px,7vw,40px)"><span class="scr pk">сохрани скрином</span></p>
+  <div class="cheat rv">
+    <table>
+      <thead><tr><th></th><th>du</th><th>ihr</th><th>Sie</th></tr></thead>
+      <tbody>
+        <tr><td>kommen</td><td>Komm!</td><td>Kommt!</td><td>Kommen Sie!</td></tr>
+        <tr><td>geben</td><td>Gib!</td><td>Gebt!</td><td>Geben Sie!</td></tr>
+        <tr><td>fahren</td><td>Fahr!</td><td>Fahrt!</td><td>Fahren Sie!</td></tr>
+        <tr><td>warten</td><td>Warte!</td><td>Wartet!</td><td>Warten Sie!</td></tr>
+        <tr><td>aufmachen</td><td>Mach auf!</td><td>Macht auf!</td><td>Machen Sie auf!</td></tr>
+        <tr><td>sich beeilen</td><td>Beeil dich!</td><td>Beeilt euch!</td><td>Beeilen Sie sich!</td></tr>
+        <tr><td>haben</td><td>Hab!</td><td>Habt!</td><td>Haben Sie!</td></tr>
+        <tr><td>sein</td><td>Sei!</td><td>Seid!</td><td>Seien Sie!</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<div class="marquee pinkm" aria-hidden="true"><div class="mq"><span>340+ гайдов</span><i>✦</i><span><em>A0 → C1</em></span><i>✦</i><span>7500+ слов</span><i>✦</i><span>Офлайн</span><i>✦</i><span><em>30€ навсегда</em></span><i>✦</i><span>Goethe · telc · DTZ</span><i>✦</i><span>ИИ-проверка</span><i>✦</i><span>340+ гайдов</span><i>✦</i><span><em>A0 → C1</em></span><i>✦</i><span>7500+ слов</span><i>✦</i><span>Офлайн</span><i>✦</i><span><em>30€ навсегда</em></span><i>✦</i><span>Goethe · telc · DTZ</span><i>✦</i><span>ИИ-проверка</span><i>✦</i></div></div>
+
+<!-- ============================================================
+     РЕКЛАМА ПЛАТФОРМЫ
+     ============================================================ -->
+<section class="adbanner" id="platform">
+  <div class="blob" style="width:360px;height:360px;right:-160px;top:-100px;background:radial-gradient(circle,#ff9cc3,transparent 70%)"></div>
+  <svg class="star" style="width:30px;left:6%;bottom:8%"><use href="#star4" fill="url(#gStar)"/></svg>
+  <div class="adgrid">
+    <div>
+      <span class="pill rv">Более 340 гайдов</span>
+      <h2 class="rv">Этот гайд —<br>один из&nbsp;340. <span class="scr">Остальные</span><br><b>на платформе Stellas</b></h2>
+      <p class="lead rv">Вся грамматика и&nbsp;лексика <b>от&nbsp;A0 до&nbsp;C1.</b> В&nbsp;том же стиле. Коротко, на&nbsp;примерах, с&nbsp;озвучкой.</p>
+      <div class="stack rv zoom">
+        <img src="media/p3-guide.jpg" alt="Список гайдов по грамматике" loading="lazy">
+        <img src="media/p4-words.jpg" alt="Слова с озвучкой" loading="lazy">
+        <img src="media/p1-home.jpg" alt="Главная страница платформы" loading="lazy">
+      </div>
+    </div>
+    <div class="vidcard rv">
+      <video muted loop playsinline preload="none" poster="media/grammar.jpg" data-src="media/grammar.mp4"></video>
+      <p>Вот он. <b>«Повелительное наклонение»</b> в&nbsp;списке. Между модальными глаголами и&nbsp;sein/haben. С&nbsp;видео, упражнениями и&nbsp;разбором ответов.</p>
+    </div>
+  </div>
+</section>
+
+<section class="panel" id="pain">
+  <div class="blob" style="width:300px;height:300px;left:-140px;top:-40px"></div>
+  <div class="two">
+    <div class="case rv">
+      <div class="hd"><b>Бонусная история</b> — сорок вкладок</div>
+      <div class="bd story">
+        <p class="ln">У меня есть знакомая. Динара. Три года в&nbsp;Германии. Учит немецкий сама.</p>
+        <p class="ln">Три учебника. Два телеграм-канала. Приложение с&nbsp;совой. Сорок вкладок в&nbsp;браузере.</p>
+        <p class="ln">Спрашиваю, как успехи. Говорит, я знаю слово «яблоко» на&nbsp;пяти уровнях. А&nbsp;как попросить соседа сделать музыку тише — не&nbsp;знаю.</p>
+        <p class="ln">Говорю, <b>Mach die Musik leiser.</b> Говорит, это откуда. Говорю, Imperativ. Говорит, а&nbsp;где это было?</p>
+        <p class="ln punch">Везде было. Порядка не&nbsp;было.</p>
+      </div>
+    </div>
+    <div>
+      <h2 class="h h2 rv"><span class="pk">Знакомо?</span></h2>
+      <p class="lead rv">Ты не ленивый. <b>Тебе просто не&nbsp;хватает системы.</b></p>
+    </div>
+  </div>
+
+  <div class="pains">
+    <div class="case rv"><div class="hd"><b>40 вкладок</b> — ноль системы</div><div class="bd" style="font-size:15px">Материалов в&nbsp;интернете миллион. Какой брать первым — непонятно. Учишь всё сразу и&nbsp;ничего до&nbsp;конца.</div><div class="res">В Stellas всё разложено по уровням: от&nbsp;A0 до&nbsp;C1</div></div>
+    <div class="case rv" style="--d:1"><div class="hd"><b>Integrationskurs</b> на скорости поезда</div><div class="bd" style="font-size:15px">Двадцать человек в&nbsp;группе. Объясняют по-немецки то, что ты не&nbsp;понимаешь по-немецки. Переспросить в&nbsp;третий раз неудобно.</div><div class="res">Объяснения на русском. Перечитывай хоть десять раз</div></div>
+    <div class="case rv" style="--d:2"><div class="hd"><b>Выучил в понедельник</b> — забыл в пятницу</div><div class="bd" style="font-size:15px">Слова из&nbsp;списка живут три дня. Без звука, без контекста, без повторения.</div><div class="res">7500+ слов с озвучкой, флеш-карты и трекер</div></div>
+    <div class="case rv"><div class="hd"><b>«Почему так?»</b> — никто не отвечает</div><div class="bd" style="font-size:15px">В учебнике ответы в&nbsp;конце. Правильно или нет — видно. Почему — нет.</div><div class="res">К каждому упражнению — разбор, почему так</div></div>
+    <div class="case rv" style="--d:1"><div class="hd"><b>Час с репетитором</b> — как ужин в ресторане</div><div class="bd" style="font-size:15px">И так каждую неделю. А&nbsp;между занятиями ты всё равно один на&nbsp;один с&nbsp;учебником.</div><div class="res">Платформа — 30€. Один раз. Навсегда</div></div>
+    <div class="case rv" style="--d:2"><div class="hd"><b>В U-Bahn</b> нет интернета</div><div class="bd" style="font-size:15px">Самое свободное время — в&nbsp;дороге. А&nbsp;связи там нет. И&nbsp;ты опять листаешь галерею.</div><div class="res">Notion работает офлайн. Телефон и ноутбук</div></div>
+  </div>
+</section>
+
+<section class="panel white" id="inside">
+  <div class="blob" style="width:300px;height:300px;right:-140px;top:10%"></div>
+  <h2 class="h h2 rv">Что <span class="pk">внутри</span></h2>
+  <div class="nums">
+    <div class="rv"><b data-count="340">0</b><span>гайдов A0–C1</span></div>
+    <div class="rv" style="--d:1"><b data-count="7500">0</b><span>слов с озвучкой</span></div>
+    <div class="rv" style="--d:2"><b data-count="100">0</b><span>учеников в клубах</span></div>
+  </div>
+  <div class="inside">
+    <div class="it rv"><span class="ico"><svg><use href="#i-book"/></svg></span><p><b>340+ гайдов</b> от&nbsp;A0 до&nbsp;C1 — грамматика, лексика, реальные фразы. Как на&nbsp;канале, но&nbsp;лучше</p></div>
+    <div class="it rv" style="--d:1"><span class="ico"><svg><use href="#i-play"/></svg></span><p>В каждом гайде: <b>объяснение, видео</b> и&nbsp;упражнения с&nbsp;ответами и&nbsp;<b>разбором</b></p></div>
+    <div class="it rv"><span class="ico"><svg><use href="#i-ai"/></svg></span><p><b>Интерактивные версии в&nbsp;Gemini:</b> озвучка немецких слов, три упражнения и&nbsp;проверка от&nbsp;ИИ</p></div>
+    <div class="it rv" style="--d:1"><span class="ico"><svg><use href="#i-wave"/></svg></span><p><b>7500+ слов</b> с&nbsp;озвучкой и&nbsp;транскрипцией. Не&nbsp;просто список — реально на&nbsp;слух</p></div>
+    <div class="it rv"><span class="ico"><svg><use href="#i-ai"/></svg></span><p>B1–C1: лексика по&nbsp;<b>экзаменационным темам</b> — тексты, диалоги, тест и&nbsp;<b>чат с&nbsp;ИИ-собеседником</b></p></div>
+    <div class="it rv" style="--d:1"><span class="ico"><svg><use href="#i-cup"/></svg></span><p>Раздел <b>«Экзамены»:</b> Goethe, telc, DTZ, ÖSD, TestDaF</p></div>
+    <div class="it rv"><span class="ico"><svg><use href="#i-film"/></svg></span><p><b>Фильмы, книги, подкасты</b> — уже отсортированы по&nbsp;уровню</p></div>
+    <div class="it rv" style="--d:1"><span class="ico"><svg><use href="#i-chart"/></svg></span><p><b>Умный трекер</b> прогресса, флеш-карты, диалоги</p></div>
+    <div class="it rv"><span class="ico"><svg><use href="#i-wifi"/></svg></span><p>Всё в&nbsp;Notion — <b>работает офлайн</b> с&nbsp;телефона и&nbsp;ноутбука</p></div>
+    <div class="it rv" style="--d:1"><span class="ico"><svg><use href="#i-check"/></svg></span><p>Лексика <b>для жизни:</b> Jobcenter, врач, аренда, работа, транспорт — по&nbsp;ситуациям</p></div>
+  </div>
+</section>
+
+<section class="panel" id="look">
+  <div class="shead">
+    <div>
+      <h2 class="h h2 rv">Как это <span class="pk">выглядит</span></h2>
+      <p class="sub rv">Листай. Это реальные записи экрана с&nbsp;платформы.</p>
+    </div>
+    <div class="arrows rv"><button data-car="#vcar" data-dir="-1" aria-label="Назад"><svg><use href="#arrL"/></svg></button><button data-car="#vcar" data-dir="1" aria-label="Вперёд"><svg><use href="#arrR"/></svg></button></div>
+  </div>
+  <div class="car" id="vcar">
+    <div class="vslide"><video muted loop playsinline preload="none" poster="media/gemini.jpg" data-src="media/gemini.mp4"></video><p><b>Интерактивные гайды.</b> Нажал — услышал. Сделал — ИИ проверил.</p></div>
+    <div class="vslide tall"><video muted loop playsinline preload="none" poster="media/app.jpg" data-src="media/app.mp4"></video><p><b>Тренажёр артиклей</b> на&nbsp;телефоне. По&nbsp;темам, с&nbsp;картинками.</p></div>
+    <div class="vslide"><video muted loop playsinline preload="none" poster="media/sollen.jpg" data-src="media/sollen.mp4"></video><p><b>Разборы вроде Sollen vs Wollen.</b> С&nbsp;лайфхаками, которых нет в&nbsp;учебнике.</p></div>
+    <div class="vslide"><video muted loop playsinline preload="none" poster="media/derdiedas.jpg" data-src="media/derdiedas.mp4"></video><p><b>Артикли через персонажей.</b> Herr Der, Frau Die и&nbsp;Baby Das.</p></div>
+    <div class="vslide"><video muted loop playsinline preload="none" poster="media/lexik.jpg" data-src="media/lexik.mp4"></video><p><b>Лексика по ситуациям.</b> Транспорт, деньги, врач, работа, отпуск.</p></div>
+    <div class="vslide"><img src="media/p5-builder.jpg" alt="Sentence Builder" loading="lazy"><p><b>Собери фразу.</b> Приложение подсвечивает ошибки и&nbsp;зачитывает результат.</p></div>
+    <div class="vslide"><img src="media/p6-tracker.jpg" alt="Трекер прогресса" loading="lazy"><p><b>Трекер.</b> Поставил цель — видишь, сколько сделал.</p></div>
+    <div class="vslide"><img src="media/p8-situations.jpg" alt="Лексика по ситуациям" loading="lazy"><p><b>Больница, магазин, Jobcenter.</b> Готовые фразы на&nbsp;каждый случай.</p></div>
+  </div>
+</section>
+
+<section class="panel white" id="forwho">
+  <h2 class="h h2 rv" style="text-align:right">Для кого<br>подойдёт<br><span class="pk">платформа:</span></h2>
+  <div class="forwho">
+    <div class="fw rv"><div class="pic">🧳<i></i></div>Тем, кто <b>только переехал</b> и&nbsp;начинает с&nbsp;нуля</div>
+    <div class="fw rv" style="--d:1"><div class="pic">🎒<i></i></div>Тем, кто <b>сидит на&nbsp;Integrationskurs</b> и&nbsp;хочет понимать, а&nbsp;не&nbsp;кивать</div>
+    <div class="fw rv" style="--d:2"><div class="pic">📝<i></i></div>Тем, кто <b>сдаёт Goethe, telc, DTZ</b> или TestDaF</div>
+    <div class="fw rv" style="--d:3"><div class="pic">🚇<i></i></div>Тем, кто работает и&nbsp;учит <b>по&nbsp;15 минут в&nbsp;дороге</b></div>
+    <div class="fw wide rv" style="--d:4"><div class="pic">🧭<i></i></div>Тем, кто учил сам и&nbsp;<b>запутался в&nbsp;источниках</b></div>
+  </div>
+</section>
+
+<section class="panel" id="reviews">
+  <div class="shead">
+    <div>
+      <h2 class="h h2 rv">Что говорят <span class="pk">ученики</span></h2>
+      <p class="sub rv">Посмотри на&nbsp;тех, кто уже начал. Скрины без&nbsp;редактуры.</p>
+    </div>
+    <div class="arrows rv"><button data-car="#rcar" data-dir="-1" aria-label="Назад"><svg><use href="#arrL"/></svg></button><button data-car="#rcar" data-dir="1" aria-label="Вперёд"><svg><use href="#arrR"/></svg></button></div>
+  </div>
+  <div class="car" id="rcar">
+    <div class="rslide"><img src="media/r5.jpg" alt="Отзыв ученика" loading="lazy"></div>
+    <div class="rslide"><img src="media/r6.jpg" alt="Отзыв ученика" loading="lazy"></div>
+    <div class="rslide"><img src="media/r1.jpg" alt="Отзыв ученика" loading="lazy"></div>
+    <div class="rslide"><img src="media/r2.jpg" alt="Отзыв ученика" loading="lazy"></div>
+    <div class="rslide"><img src="media/r3.jpg" alt="Отзыв ученика" loading="lazy"></div>
+    <div class="rslide"><img src="media/r4.jpg" alt="Отзыв ученика" loading="lazy"></div>
+  </div>
+</section>
+
+<section class="panel white" id="tariffs">
+  <svg class="star" style="width:34px;left:4%;top:6%"><use href="#star4" fill="url(#gStar)"/></svg>
+  <svg class="star" style="width:22px;right:6%;top:30%;animation-delay:-3s"><use href="#star4" fill="url(#gStar)"/></svg>
+  <svg class="star" style="width:28px;left:10%;bottom:10%;animation-delay:-1s"><use href="#star4" fill="url(#gStar)"/></svg>
+  <h2 class="h h2 rv" style="text-align:center"><span class="pk">Тарифы</span> участия</h2>
+  <div class="tariffs">
+    <div class="tf rv">
+      <div class="tfh"><span class="big">A0–A2</span>
+        <svg viewBox="0 0 100 100"><use href="#star4" fill="url(#gChrome)"/></svg></div>
+      <ul>
+        <li><b>Гайды A0, A1, A2</b> — с нуля</li>
+        <li>Видео и упражнения с разбором</li>
+        <li>Слова с озвучкой, флеш-карты, трекер</li>
+        <li>Фильмы, книги, подкасты по уровню</li>
+        <li class="no">Гайды B1, B2, C1</li>
+        <li class="no">Лексика по экзаменационным темам + ИИ-чат</li>
+      </ul>
+      <div class="price"><b>20€</b><small>один раз · навсегда</small></div>
+      <a class="btn" href="https://app.lava.top/801303618?tabId=products&amp;sort=published" target="_blank" rel="noopener">Выбрать</a>
+    </div>
+
+    <div class="tf hot rv" style="--d:1">
+      <span class="badge">ВЫГОДНЕЕ НА 10€</span>
+      <div class="tfh"><span class="big">A0–C1</span>
+        <svg viewBox="0 0 100 100"><path fill="url(#gHeart)" d="M50 88C20 66 6 50 6 32 6 18 17 8 30 8c9 0 16 5 20 12 4-7 11-12 20-12 13 0 24 10 24 24 0 18-14 34-44 56z"/><ellipse cx="30" cy="26" rx="10" ry="6" fill="#fff" opacity=".55" transform="rotate(-30 30 26)"/></svg></div>
+      <ul>
+        <li><b>Все 340+ гайдов</b> A0 → C1</li>
+        <li>Видео и упражнения с разбором</li>
+        <li><b>7500+ слов</b> с озвучкой и транскрипцией</li>
+        <li>Экзамены: Goethe, telc, DTZ, ÖSD, TestDaF</li>
+        <li>Лексика по экзаменационным темам + ИИ-чат</li>
+        <li>Фильмы, книги, подкасты, трекер</li>
+        <li class="gift"><b>Платформа A0–A2 на украинском</b> — в подарок</li>
+      </ul>
+      <div class="price"><s>40€</s><b>30€</b><small>один раз · навсегда</small></div>
+      <a class="btn" href="https://app.lava.top/801303618?tabId=products&amp;sort=published" target="_blank" rel="noopener">Хочу всё</a>
+    </div>
+
+    <div class="tf rv" style="--d:2">
+      <div class="tfh"><span class="big">B1–C1</span>
+        <svg viewBox="0 0 100 100"><use href="#star4" fill="url(#gChrome)" transform="translate(4 18) scale(.62)"/><use href="#star4" fill="url(#gChrome)" transform="translate(40 6) scale(.55)"/></svg></div>
+      <ul>
+        <li class="no">Гайды A0, A1, A2</li>
+        <li><b>Гайды B1, B2, C1</b></li>
+        <li>Лексика по экзаменационным темам + ИИ-чат</li>
+        <li>Подготовка к Goethe, telc, TestDaF</li>
+        <li>Видео, упражнения с разбором, трекер</li>
+        <li>Фильмы, книги, подкасты по уровню</li>
+      </ul>
+      <div class="price"><b>20€</b><small>один раз · навсегда</small></div>
+      <a class="btn" href="https://app.lava.top/801303618?tabId=products&amp;sort=published" target="_blank" rel="noopener">Выбрать</a>
+    </div>
+  </div>
+  <p class="tnote rv">Оплата один раз. Доступ навсегда. Все обновления для купивших — бесплатно.</p>
+</section>
+
+<section class="final" id="final">
+  <div class="blob" style="width:340px;height:340px;left:-150px;top:-80px;background:radial-gradient(circle,#ff9cc3,transparent 70%)"></div>
+  <div class="inner">
+    <div>
+      <h2 class="h h2 rv">У вас остались<br>вопросы?</h2>
+      <p class="lead rv">Тогда напишите нам в&nbsp;Telegram — <b>@stellasdeutsch</b>. Ответим и&nbsp;подскажем, какой уровень выбрать.</p>
+      <p class="lead rv" style="margin-top:18px">Бруно выучил Imperativ за&nbsp;неделю. <b>У&nbsp;Бруно не&nbsp;было платформы. У&nbsp;тебя есть.</b></p>
+      <div class="btns rv">
+        <a class="btn white glow" href="https://app.lava.top/801303618?tabId=products&amp;sort=published" target="_blank" rel="noopener">Получить доступ</a>
+        <a class="btn line" href="https://t.me/stellasdeutsch" target="_blank" rel="noopener">Написать в Telegram</a>
+      </div>
+    </div>
+    <div class="signpost" aria-hidden="true">
+      <div class="pole"></div>
+            <div class="board b1"><span class="km">A0<br>→C1</span><span class="bt">Fang an!</span><span class="ar">→</span></div>
+      <div class="board b2"><span class="ar">←</span><span class="bt">Остаться на A2</span></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <a class="brand" href="#top"><img src="media/logo.png" alt="">Stellas Deutsch</a>
+  <p>Немецкий без воды · <a href="https://t.me/stellas_d" target="_blank" rel="noopener">t.me/stellas_d</a></p>
+</footer>
+
+<div class="sticky" id="sticky">
+  <div><small>Платформа A0–C1 · 340+ гайдов</small><b>30€ <s style="color:#888;font-weight:400;font-size:13px">40€</s> навсегда</b></div>
+  <a href="https://app.lava.top/801303618?tabId=products&amp;sort=published" target="_blank" rel="noopener">Купить</a>
+</div>
+
+<script>
+(()=>{
+const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
+const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+const cap=s=>s.charAt(0).toUpperCase()+s.slice(1);
+
+/* ---------- speech ---------- */
+const hasTTS='speechSynthesis' in window;
+let deVoice=null;
+function pickVoice(){const vs=speechSynthesis.getVoices();deVoice=vs.find(v=>/^de[-_]DE/i.test(v.lang))||vs.find(v=>/^de/i.test(v.lang))||null;}
+if(hasTTS){pickVoice();speechSynthesis.onvoiceschanged=pickVoice;}
+function say(t,btn){
+  if(!hasTTS)return;
+  speechSynthesis.cancel();
+  const u=new SpeechSynthesisUtterance(t);u.lang='de-DE';if(deVoice)u.voice=deVoice;u.rate=.9;
+  if(btn){btn.classList.add('on');u.onend=u.onerror=()=>btn.classList.remove('on');}
+  speechSynthesis.speak(u);
+}
+document.addEventListener('click',e=>{const b=e.target.closest('[data-say]');if(b){e.preventDefault();say(b.dataset.say,b);}});
+
+/* ---------- split headings into chars ---------- */
+$$('.h').forEach(el=>{
+  let i=0;el.setAttribute('aria-label',el.textContent.replace(/\s+/g,' ').trim());
+  const walk=n=>[...n.childNodes].forEach(ch=>{
+    if(ch.nodeType===3){
+      const f=document.createDocumentFragment();
+      ch.textContent.split(/(\s+)/).forEach(p=>{
+        if(!p)return;
+        if(/^\s+$/.test(p)){f.appendChild(document.createTextNode(p));return;}
+        const w=document.createElement('span');w.className='w';w.setAttribute('aria-hidden','true');
+        [...p].forEach(c=>{const sp=document.createElement('span');sp.className='c';sp.textContent=c;sp.style.setProperty('--i',i++);w.appendChild(sp);});
+        f.appendChild(w);
+      });
+      ch.replaceWith(f);
+    }else if(ch.nodeType===1&&ch.tagName!=='BR')walk(ch);
+  });
+  walk(el);
+});
+
+/* ---------- observers ---------- */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+$$('.rv').forEach(el=>io.observe(el));
+function onView(el,fn,th=.3){const o=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){o.disconnect();fn();}}),{threshold:th});o.observe(el);}
+$$('.loop').forEach(el=>new IntersectionObserver(es=>es.forEach(e=>e.target.classList.toggle('play',e.isIntersecting)),{threshold:.3}).observe(el));
+
+/* stories: lines one by one, chat bubbles with typing */
+$$('.story').forEach(st=>onView(st,async()=>{
+  for(const n of $$('.ln,.bub',st)){
+    if(n.classList.contains('bub')&&!RM){n.classList.add('typing');await sleep(700);n.classList.remove('typing');}
+    n.classList.add('in');
+    await sleep(RM?0:(n.classList.contains('bub')?380:520));
+  }
+},.15));
+
+/* count-up */
+$$('[data-count]').forEach(el=>onView(el,()=>{
+  const to=+el.dataset.count,t0=performance.now(),d=RM?1:1400;
+  const f=t=>{const k=Math.min(1,(t-t0)/d),v=Math.round(to*(1-Math.pow(1-k,3)));el.textContent=v.toLocaleString('ru-RU')+(k===1?'+':'');if(k<1)requestAnimationFrame(f);};
+  requestAnimationFrame(f);
+}));
+
+/* lazy videos */
+const vio=new IntersectionObserver(es=>es.forEach(e=>{
+  const v=e.target;
+  if(e.isIntersecting){if(!v.src)v.src=v.dataset.src;v.play().catch(()=>{});}else v.pause();
+}),{threshold:.35});
+$$('video[data-src]').forEach(v=>vio.observe(v));
+
+/* carousels */
+$$('[data-car]').forEach(b=>b.addEventListener('click',()=>{const c=$(b.dataset.car);c.scrollBy({left:+b.dataset.dir*c.clientWidth*.8,behavior:'smooth'});}));
+
+/* progress + sticky */
+const prog=$('#prog'),sticky=$('#sticky'),tariffs=$('#tariffs'),finalS=$('#final');
+let hideSticky=false;
+new IntersectionObserver(es=>{hideSticky=es.some(e=>e.isIntersecting);onScroll();},{threshold:0}).observe(tariffs);
+new IntersectionObserver(es=>{if(es[0].isIntersecting)hideSticky=true;onScroll();},{threshold:0}).observe(finalS);
+function onScroll(){
+  const h=document.documentElement.scrollHeight-innerHeight;
+  prog.style.width=(h>0?scrollY/h*100:0)+'%';
+  sticky.classList.toggle('on',scrollY>innerHeight*.9&&!hideSticky&&!isNear(tariffs)&&!isNear(finalS));
+}
+function isNear(el){const r=el.getBoundingClientRect();return r.top<innerHeight&&r.bottom>0;}
+addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+/* ---------- token stage (FLIP animations) ---------- */
+class Stage{
+  constructor(el){this.el=el;this.map=new Map();}
+  clear(){this.el.innerHTML='';this.map.clear();}
+  render(step){
+    const el=this.el,sr=el.getBoundingClientRect(),first=new Map();
+    this.map.forEach((n,id)=>first.set(id,n.getBoundingClientRect()));
+    const ids=new Set(step.t.map(x=>x[0]));
+    this.map.forEach((n,id)=>{
+      if(ids.has(id))return;
+      const r=first.get(id);
+      Object.assign(n.style,{position:'absolute',left:(r.left-sr.left-4)+'px',top:(r.top-sr.top-5)+'px'});
+      n.classList.add('gone');this.map.delete(id);setTimeout(()=>n.remove(),600);
+    });
+    step.t.forEach(([id,txt,cls])=>{
+      let n=this.map.get(id);const isNew=!n;
+      if(isNew){n=document.createElement('span');n.dataset.id=id;this.map.set(id,n);}
+      const changed=!isNew&&n.textContent!==txt;
+      n.textContent=txt;
+      n.className='tk '+(cls||'')+(isNew?' pop':changed?' morph':'');
+      el.appendChild(n);
+    });
+    if(!RM)this.map.forEach((n,id)=>{
+      const f=first.get(id);if(!f)return;
+      const l=n.getBoundingClientRect(),dx=f.left-l.left,dy=f.top-l.top;
+      if(Math.abs(dx)>1||Math.abs(dy)>1)n.animate([{transform:`translate(${dx}px,${dy}px)`},{transform:'translate(0,0)'}],{duration:600,easing:'cubic-bezier(.2,.8,.2,1)'});
+    });
+    if(step.fx==='dots'&&!RM){
+      const n=this.map.get('s');
+      requestAnimationFrame(()=>{const r=n.getBoundingClientRect(),s2=el.getBoundingClientRect();
+        const d=document.createElement('span');d.className='dotfx';d.textContent='¨';
+        d.style.left=(r.left-s2.left+r.width*.34)+'px';d.style.top=(r.top-s2.top-16)+'px';
+        el.appendChild(d);setTimeout(()=>d.remove(),1200);});
+    }
+  }
+}
+
+/* ---------- verb machine ---------- */
+const V={
+  kommen:{ru:'приходить',du:['komm','st'],ihr:'kommt',sie:'kommen'},
+  machen:{ru:'делать',du:['mach','st'],ihr:'macht',sie:'machen'},
+  warten:{ru:'ждать',du:['wart','est'],ihr:'wartet',sie:'warten',fix:'e'},
+  geben:{ru:'давать',du:['gib','st'],ihr:'gebt',sie:'geben',fix:'i'},
+  lesen:{ru:'читать',du:['lies','t'],ihr:'lest',sie:'lesen',fix:'ie'},
+  fahren:{ru:'ехать',du:['fähr','st'],ihr:'fahrt',sie:'fahren',fix:'uml'},
+  aufmachen:{ru:'открывать',du:['mach','st'],ihr:'macht',sie:'machen',sep:'auf',obj:'das Fenster'},
+  sein:{ru:'быть',ihr:'seid',sie:'sind',obj:'ruhig'}
+};
+function stepsDu(k){
+  const v=V[k];
+  if(k==='sein')return[
+    {c:'Берём <b>sein</b> на du: <b>du bist</b>.',t:[['p','du','p'],['s','bist','s']]},
+    {c:'Выкидываем <b>du</b>. Как обычно.',t:[['p','du','p x'],['s','bist','s']]},
+    {c:'А дальше sein выпендривается. <b>bist</b> не работает. Вообще.',t:[['s','bist','s x']]},
+    {c:'Просто запомни: <b>Sei!</b> Sei ruhig! — Успокойся!',t:[['z','Sei','s hl'],['o','ruhig','o'],['m','!','m']],say:'Sei ruhig!'}
+  ];
+  const [st,en]=v.du,sep=v.sep?[['r',v.sep,'r']]:[],S=[];
+  S.push({c:`Берём глагол на du: <b>du ${st}${en}${v.sep?' '+v.sep:''}</b>.`,t:[['p','du','p'],['s',st,'s'],['e',en,'e'],...sep]});
+  S.push({c:'Выкидываем <b>du</b>. Ты и так смотришь человеку в глаза.',t:[['p','du','p x'],['s',st,'s'],['e',en,'e'],...sep]});
+  S.push({c:`Отрезаем <b>-${en}</b>. Без жалости.`,t:[['s',st,'s'],['e',en,'e x'],...sep]});
+  let fin=st;
+  if(v.fix==='uml'){fin=st.replace('ä','a');S.push({c:'Умлаут отваливается: <b>ä → a</b>. Не Fähr, а Fahr.',t:[['s',fin,'s hl']],fx:'dots'});}
+  if(v.fix==='i')S.push({c:'Внимание: <b>i</b> остаётся. Не Geb, а <b>Gib</b>.',t:[['s',st,'s hl']]});
+  if(v.fix==='ie')S.push({c:'<b>ie</b> остаётся. Не Les, а <b>Lies</b>.',t:[['s',st,'s hl']]});
+  if(v.fix==='e')S.push({c:'«Wart!» — язык спотыкается. Добавляем <b>-e</b>.',t:[['s',st,'s gl'],['a','e','e gr']]});
+  if(v.sep)S.push({c:`Приставка <b>${v.sep}</b> уезжает в самый конец. Между ними — всё остальное.`,t:[['s',st,'s'],['o',v.obj,'o'],['r',v.sep,'r hl']]});
+  const word=cap(fin)+(v.fix==='e'?'e':'')+(v.sep?` ${v.obj} ${v.sep}`:'')+'!';
+  const t=[['s',cap(fin),'s hl'+(v.fix==='e'?' gl':'')]];
+  if(v.fix==='e')t.push(['a','e','s hl gr']);
+  if(v.sep)t.push(['o',v.obj,'o'],['r',v.sep,'r']);
+  t.push(['m','!','m']);
+  S.push({c:`Ставим «!». <b>${word}</b> — готово.`,t,say:word});
+  return S;
+}
+function stepsIhr(k){
+  const v=V[k],sep=v.sep?[['r',v.sep,'r']]:[];
+  const word=cap(v.ihr)+(v.sep?` ${v.obj} ${v.sep}`:'')+(k==='sein'?' ruhig':'')+'!';
+  const t=[['s',cap(v.ihr),'s hl']];
+  if(v.sep)t.push(['o',v.obj,'o'],['r',v.sep,'r']);
+  if(k==='sein')t.push(['o','ruhig','o n']);
+  t.push(['m','!','m']);
+  return[
+    {c:`Берём глагол на ihr: <b>ihr ${v.ihr}${v.sep?' '+v.sep:''}</b>.`,t:[['p','ihr','p'],['s',v.ihr,'s'],...sep]},
+    {c:'Выкидываем <b>ihr</b>. Окончание не трогаем. Вообще.',t:[['p','ihr','p x'],['s',v.ihr,'s'],...sep]},
+    {c:k==='sein'?'Тут sein ведёт себя прилично: <b>Seid!</b> Как в обычной форме.':`<b>${word}</b> — это вам, ребята. Готово.`,t,say:word}
+  ];
+}
+function stepsSie(k){
+  const v=V[k],sep=v.sep?[['r',v.sep,'r']]:[],S=[];
+  S.push({c:`Берём форму на Sie: <b>Sie ${v.sie}${v.sep?' '+v.sep:''}</b>. Пока это просто «Вы …».`,t:[['p','Sie','p'],['s',v.sie,'s'],...sep]});
+  let id='s',form=v.sie;
+  if(k==='sein'){
+    S.push({c:'sein и тут выпендривается. Не sind, а <b>seien</b>.',t:[['p','Sie','p'],['s','sind','s x']]});
+    id='z';form='seien';
+    S.push({c:'Вот так: <b>Sie seien</b>. Запомни эту странную форму.',t:[['p','Sie','p'],['z','seien','s']]});
+  }
+  S.push({c:'Меняем местами. Глагол — вперёд. Теперь это уже просьба.',t:[[id,form,'s hl'],['p','Sie','p'],...sep]});
+  const t=[[id,cap(form),'s hl'],['p','Sie','p'],['b','bitte','o n']];
+  if(v.sep)t.push(['o',v.obj,'o'],['r',v.sep,'r']);
+  if(k==='sein')t.push(['o','ruhig','o n']);
+  t.push(['m','!','m']);
+  const word=`${cap(form)} Sie bitte${v.sep?` ${v.obj} ${v.sep}`:''}${k==='sein'?' ruhig':''}!`;
+  S.push({c:'Добавляем <b>bitte</b> — и ты воспитанный человек.',t,say:word});
+  return S;
+}
+
+const M={verb:'kommen',per:'du',steps:[],i:0,timer:null};
+const mStage=new Stage($('#mStage')),mCap=$('#mCap'),mNum=$('#mNum'),mDots=$('#mDots'),mSay=$('#mSay'),mNext=$('#mNext'),mPlay=$('#mPlay');
+$('#mVerbs').innerHTML=Object.entries(V).map(([k,v])=>`<button class="chip${k===M.verb?' on':''}" data-v="${k}"><b>${k}</b><span>${v.ru}</span></button>`).join('');
+function build(){M.steps=({du:stepsDu,ihr:stepsIhr,Sie:stepsSie})[M.per](M.verb);mDots.innerHTML=M.steps.map(()=>'<i></i>').join('');}
+function show(i){
+  M.i=i;const s=M.steps[i],last=i===M.steps.length-1;
+  mStage.render(s);mCap.innerHTML=s.c;mNum.textContent=`Шаг ${i+1}/${M.steps.length}`;
+  $$('i',mDots).forEach((d,j)=>d.classList.toggle('on',j<=i));
+  mSay.hidden=!last;if(last)mSay.dataset.say=s.say;
+  mNext.textContent=last?'Заново ↺':'Дальше →';
+  $('#mStage').classList.toggle('done',last);
+}
+function stop(){clearInterval(M.timer);M.timer=null;mPlay.classList.remove('on');}
+function play(){
+  stop();build();mStage.clear();show(0);mPlay.classList.add('on');
+  M.timer=setInterval(()=>{if(M.i>=M.steps.length-1){stop();say(M.steps[M.i].say,mSay);return;}show(M.i+1);},RM?600:1600);
+}
+mPlay.onclick=play;
+mNext.onclick=()=>{stop();if(M.i>=M.steps.length-1){mStage.clear();show(0);}else show(M.i+1);};
+$('#mVerbs').addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)return;M.verb=b.dataset.v;$$('.chip').forEach(c=>c.classList.toggle('on',c===b));const cc=b.parentElement;cc.scrollTo({left:b.offsetLeft-cc.clientWidth/2+b.offsetWidth/2,behavior:'smooth'});play();});
+$('#mPer').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;M.per=b.dataset.p;$$('#mPer button').forEach(c=>c.classList.toggle('on',c===b));play();});
+build();show(0);
+onView($('#mStage'),()=>setTimeout(()=>{if(!M.timer&&M.i===0)play();},500),.6);
+
+/* ---------- prefix loop ---------- */
+const P=[
+  {c:'<b>aufmachen</b> — открывать. Пока это одно слово.',t:[['a','auf','r gl'],['m','machen','s gr']]},
+  {c:'В команде глагол ломается пополам.',t:[['a','auf','r'],['m','machen','s']]},
+  {c:'Основа — вперёд. На du: <b>Mach</b>.',t:[['m','Mach','s hl'],['a','auf','r']]},
+  {c:'Приставка — в самый конец. Всё остальное — между ними.',t:[['m','Mach','s hl'],['o','das Fenster','o'],['a','auf','r hl'],['x','!','m']]},
+  {c:'С Sie та же логика: <b>Machen Sie bitte das Fenster auf!</b>',t:[['m','Machen','s hl'],['p','Sie','p'],['b','bitte','o'],['o','das Fenster','o'],['a','auf','r hl'],['x','!','m']]}
+];
+const pStage=new Stage($('#pStage')),pDots=$('#pDots');
+pDots.innerHTML=P.map(()=>'<i></i>').join('');
+let pGen=0;
+async function pLoop(g){
+  while(g===pGen){
+    pStage.clear();
+    for(let i=0;i<P.length;i++){
+      if(g!==pGen)return;
+      pStage.render(P[i]);$('#pCap').innerHTML=P[i].c;
+      $$('i',pDots).forEach((d,j)=>d.classList.toggle('on',j<=i));
+      await sleep(i===P.length-1?3400:2000);
+    }
+  }
+}
+pStage.render(P[0]);$('#pCap').innerHTML=P[0].c;
+new IntersectionObserver(es=>es.forEach(e=>{pGen++;if(e.isIntersecting)pLoop(pGen);}),{threshold:.4}).observe($('#pStage'));
+
+/* ---------- politeness ---------- */
+const POL=[
+  ['Fenster zu!','Прапорщик','Так говорят в армии и в споре с соседом. Лучше не надо.'],
+  ['Mach das Fenster zu!','Мама','Своим можно. Чужим — обидно.'],
+  ['Mach mal das Fenster zu.','Коллега на перекуре','mal — смазка. Команда сразу звучит легче.'],
+  ['Mach bitte das Fenster zu.','Друг','bitte — страховка. Вежливо, но всё ещё на ты.'],
+  ['Machen Sie bitte das Fenster zu.','Врач, сосед, Behörde','Стандарт для взрослых незнакомых людей.'],
+  ['Könnten Sie bitte das Fenster zumachen?','Ausländerbehörde','Когда очень нужен Termin. Это уже Konjunktiv, но работает лучше.'],
+  ['Würden Sie so nett sein und das Fenster zumachen?','Английская королева','Вежливее — только молча закрыть окно самому.']
+];
+const pol=$('#pol'),polTxt=$('#polTxt');
+function upPol(anim){
+  const [t,w,n]=POL[+pol.value];
+  const apply=()=>{polTxt.textContent=t;polTxt.classList.remove('sw');};
+  if(anim&&!RM){polTxt.classList.add('sw');setTimeout(apply,180);}else apply();
+  $('#polWho').textContent=w;$('#polNote').textContent=n;$('#polSay').dataset.say=t;
+  $('#polBar').style.width=((+pol.value+1)/POL.length*100)+'%';
+}
+pol.addEventListener('input',()=>upPol(true));upPol(false);
+
+/* ---------- signs ---------- */
+const SG=[
+  ['Bitte nicht rauchen','Пожалуйста, не курить',''],
+  ['Einsteigen, bitte!','Проходите в вагон!','go'],
+  ['Nicht hinauslehnen','Не высовываться из окна',''],
+  ['Bitte anschnallen','Пристегнитесь','go'],
+  ['Rasen nicht betreten','По газону не ходить',''],
+  ['Hunde bitte anleinen','Собак — на поводок','Бруно, это тебе'],
+  ['Tür nicht aufhalten','Не держать дверь',''],
+  ['Bitte Nummer ziehen','Возьмите талон','go']
+];
+$('#signGrid').innerHTML=SG.map(([de,ru,x],i)=>`<button class="sg rv${x==='go'?' go':''}" style="--d:${i%4}" data-de="${de}"><span class="fa">${de}</span><span class="ba">${ru}${x&&x!=='go'?`<small>${x}</small>`:''}</span></button>`).join('');
+$$('#signGrid .sg').forEach(b=>{io.observe(b);b.addEventListener('click',()=>{b.classList.toggle('fl');if(b.classList.contains('fl'))say(b.dataset.de);});});
+
+/* ---------- quiz ---------- */
+const Q=[
+  {q:'Другу за столом: «___ mir das Salz!»',v:'geben',o:['Geb','Gib','Gibst'],a:1,e:'e → i остаётся: du <b>gib</b>st → <b>Gib!</b> «Geb» — ошибка.'},
+  {q:'Врачу в регистратуре: «___ bitte!»',v:'warten',o:['Warte','Wartet','Warten Sie'],a:2,e:'Врач — это Sie. Глагол + Sie: <b>Warten Sie bitte!</b>'},
+  {q:'Детям на площадке: «___ leise!»',v:'sein',o:['Sei','Seid','Sind'],a:1,e:'Детям — это ihr. sein на ihr: <b>Seid leise!</b>'},
+  {q:'Другу за рулём: «___ langsamer!»',v:'fahren',o:['Fähr','Fahr','Fahre du'],a:1,e:'Умлаут отваливается: du fährst → <b>Fahr!</b> И никакого du.'},
+  {q:'Подруге: «___ mich morgen ___!»',v:'anrufen',o:['Anruf … —','Ruf … an','Rufst … an'],a:1,e:'Приставка улетает в конец: <b>Ruf mich morgen an!</b>'},
+  {q:'Коллеге, вы опаздываете: «___!»',v:'sich beeilen',o:['Beeil dich','Beeilen dich','Beeil sich'],a:0,e:'Возвратный глагол на du: <b>Beeil dich!</b> dich — это ты.'}
+];
+const VERD=[[6,'Бруно тобой гордится.'],[4,'Почти. Кондуктор бы тебя не высадил. Но посмотрел бы.'],[2,'Середина. Перечитай ловушки — там всё.'],[0,'Сорок минут на перроне. Давай ещё раз.']];
+const qb=$('#quizBox');let qi=0,score=0;
+function qRender(){
+  if(qi>=Q.length){
+    const v=VERD.find(([m])=>score>=m)[1];
+    qb.innerHTML=`<div class="qres"><div class="sc">${score}/${Q.length}</div><p>${v}</p><div style="display:grid;gap:10px"><a class="btn glow" href="#platform">Хочу такие упражнения ко всем темам</a><button class="btn ghost" id="qAgain">Пройти ещё раз</button></div></div>`;
+    $('#qAgain').onclick=()=>{qi=0;score=0;qRender();};if(score>=4){const sc=$('.sc',qb);confetti(sc,60);setTimeout(()=>confetti(sc,40),350);}return;
+  }
+  const q=Q[qi];
+  qb.innerHTML=`<div class="qbar"><i style="width:${qi/Q.length*100}%"></i></div>
+  <div class="qn"><span>Вопрос ${qi+1}/${Q.length}</span><span>✓ ${score}</span></div>
+  <div class="qq">${q.q}</div><span class="qv">${q.v}</span>
+  <div class="qo">${q.o.map((o,i)=>`<button data-i="${i}">${o}<span></span></button>`).join('')}</div>
+  <div class="qe" id="qe"></div>`;
+  $$('.qo button',qb).forEach(b=>b.onclick=()=>{
+    const i=+b.dataset.i,ok=i===q.a;if(ok){score++;confetti(b);}
+    $$('.qo button',qb).forEach((x,j)=>{x.disabled=true;if(j===q.a){x.classList.add('ok');x.lastChild.textContent='✓';}});
+    if(!ok){b.classList.add('no');b.lastChild.textContent='✕';}
+    const qe=$('#qe');qe.innerHTML=(ok?'<b>Точно.</b> ':'<b>Мимо.</b> ')+q.e+`<div style="margin-top:12px"><button class="btn w" id="qNext" style="min-height:50px">${qi===Q.length-1?'Результат':'Дальше →'}</button></div>`;
+    qe.classList.add('on');
+    $('#qNext').onclick=()=>{qi++;qRender();};
+  });
+}
+qRender();
+
+/* ---------- confetti ---------- */
+function confetti(el,n=28){
+  if(RM||!el)return;
+  const r=el.getBoundingClientRect(),cx=r.left+r.width/2,cy=r.top+r.height/2,C=['#E8327C','#F4679F','#F8C6AE','#1D1C1E','#FFD166','#fff'];
+  for(let k=0;k<n;k++){
+    const d=document.createElement('span');d.className='cf';d.style.left=cx+'px';d.style.top=cy+'px';d.style.background=C[k%C.length];
+    if(k%3===0)d.style.borderRadius='50%';
+    document.body.appendChild(d);
+    const a=Math.random()*Math.PI*2,v=80+Math.random()*160,dx=Math.cos(a)*v,dy=Math.sin(a)*v-80;
+    d.animate([{transform:'translate(-50%,-50%) rotate(0)',opacity:1},{transform:`translate(${dx}px,${dy+160}px) rotate(${Math.random()*720-360}deg)`,opacity:0}],{duration:900+Math.random()*600,easing:'cubic-bezier(.2,.7,.4,1)'}).onfinish=()=>d.remove();
+  }
+}
+
+/* ---------- timeline fill ---------- */
+const tl=$('#tl'),tlFill=$('#tlFill'),tlItems=$$('.tli');
+function tlUpdate(){
+  const r=tl.getBoundingClientRect(),mark=innerHeight*.62;
+  const k=Math.max(0,Math.min(1,(mark-r.top)/r.height));
+  tlFill.style.height=(k*100)+'%';
+  tlItems.forEach(it=>{const ir=it.getBoundingClientRect();it.classList.toggle('lit',ir.top+ir.height/2<mark);});
+}
+
+/* ---------- parallax ---------- */
+const par=$$('.star,.blob');
+function parUpdate(){
+  if(RM)return;
+  par.forEach((el,i)=>{
+    const r=el.parentElement.getBoundingClientRect();
+    if(r.bottom<-200||r.top>innerHeight+200)return;
+    const k=(r.top+r.height/2-innerHeight/2)*(el.classList.contains('star')?-.12:.08)*(1+(i%3)*.35);
+    el.style.translate=`0 ${k.toFixed(1)}px`;
+  });
+}
+let ticking=false;
+addEventListener('scroll',()=>{if(ticking)return;ticking=true;requestAnimationFrame(()=>{tlUpdate();parUpdate();ticking=false;});},{passive:true});
+tlUpdate();parUpdate();
+
+/* ---------- Bruno ---------- */
+const dog=$('#dog'),dbub=$('#dbub'),stageB=$('.bruno-stage');
+const DOG={
+  sitz:['sitz','Садится. Молодец.'],
+  platz:['platz','Лёг. Ждёт следующую команду.'],
+  komm:['komm','Бежит к тебе!'],
+  dreh:['dreh','Крутится. Показушник.'],
+  pfote:['pfote','Даёт лапу. Gib — не Geb!'],
+  nope:['nope','Не понял. С собаками — только на ты.'],
+  brav:['','Хороший пёс! Это не Imperativ, это похвала.']
+};
+let dbT;
+$('#dogBtns').addEventListener('click',e=>{
+  const b=e.target.closest('[data-cmd]');if(!b)return;
+  const [cls,txt]=DOG[b.dataset.cmd];
+  $$('#dogBtns button').forEach(x=>x.classList.toggle('act',x===b));
+  dog.className='dog';void dog.offsetWidth;if(cls)dog.classList.add(cls);
+  dbub.textContent=txt;dbub.classList.add('on');clearTimeout(dbT);dbT=setTimeout(()=>dbub.classList.remove('on'),2600);
+  if(b.dataset.cmd==='brav'&&!RM)for(let k=0;k<6;k++){const h=document.createElement('span');h.className='heart';h.textContent='❤️';h.style.left=(35+Math.random()*30)+'%';h.style.animationDelay=(k*.12)+'s';stageB.appendChild(h);setTimeout(()=>h.remove(),2200);}
+});
+
+/* ---------- tariff tilt ---------- */
+if(matchMedia('(hover:hover)').matches&&!RM)$$('.tf').forEach(el=>{
+  el.addEventListener('pointermove',e=>{
+    const r=el.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
+    el.style.transition='transform .12s';
+    el.style.transform=`perspective(900px) rotateX(${(-y*7).toFixed(2)}deg) rotateY(${(x*7).toFixed(2)}deg)${el.classList.contains('hot')&&innerWidth>=900?' scale(1.04)':''}`;
+  });
+  el.addEventListener('pointerleave',()=>{el.style.transition='transform .5s';el.style.transform='';});
+});
+})();
+</script>
+</body>
+</html>
